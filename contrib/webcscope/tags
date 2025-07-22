@@ -1,0 +1,46 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/Users/alanwright/src/cscope-15.8b/contrib/webcscope/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	/05e6ab4b/
+CgiDie	cgi-lib.pl	/^sub CgiDie {$/;"	s
+CgiError	cgi-lib.pl	/^sub CgiError {$/;"	s
+DEFINE	hilite.c	/^#define DEFINE /;"	d	file:
+HtmlBot	cgi-lib.pl	/^sub HtmlBot$/;"	s
+HtmlTop	cgi-lib.pl	/^sub HtmlTop$/;"	s
+INLINE	hilite.c	/^#define INLINE /;"	d	file:
+MODE_DEFINE	hilite.c	/^#define MODE_DEFINE /;"	d	file:
+MODE_KEYWORD	hilite.c	/^#define MODE_KEYWORD /;"	d	file:
+MODE_REMARK	hilite.c	/^#define MODE_REMARK /;"	d	file:
+MODE_REMARK_EOL	hilite.c	/^#define MODE_REMARK_EOL /;"	d	file:
+MODE_STRING	hilite.c	/^#define MODE_STRING /;"	d	file:
+MethGet	cgi-lib.pl	/^sub MethGet {$/;"	s
+MethPost	cgi-lib.pl	/^sub MethPost {$/;"	s
+MyBaseUrl	cgi-lib.pl	/^sub MyBaseUrl {$/;"	s
+MyFullUrl	cgi-lib.pl	/^sub MyFullUrl {$/;"	s
+MyURL	cgi-lib.pl	/^sub MyURL  {$/;"	s
+OFF	hilite.c	/^#define OFF /;"	d	file:
+ON	hilite.c	/^#define ON /;"	d	file:
+PrintEnv	cgi-lib.pl	/^sub PrintEnv {$/;"	s
+PrintHeader	cgi-lib.pl	/^sub PrintHeader {$/;"	s
+PrintVariables	cgi-lib.pl	/^sub PrintVariables {$/;"	s
+REM1	hilite.c	/^#define REM1 /;"	d	file:
+REM2	hilite.c	/^#define REM2 /;"	d	file:
+REM_END	hilite.c	/^#define REM_END /;"	d	file:
+REM_STAR	hilite.c	/^#define REM_STAR /;"	d	file:
+REM_STAR_1	hilite.c	/^#define REM_STAR_1 /;"	d	file:
+ReadParse	cgi-lib.pl	/^sub ReadParse {$/;"	s
+START	hilite.c	/^#define START /;"	d	file:
+STRING	hilite.c	/^#define STRING /;"	d	file:
+SplitParam	cgi-lib.pl	/^sub SplitParam$/;"	s
+is_delimeter	hilite.c	/^int is_delimeter(char c)$/;"	f	typeref:typename:int
+is_keyword	hilite.c	/^int is_keyword(char * str)$/;"	f	typeref:typename:int
+main	hilite.c	/^int main(int _argc, char** _argv)$/;"	f	typeref:typename:int
+print_char_html	hilite.c	/^void print_char_html(char c)$/;"	f	typeref:typename:void
+set_mode	hilite.c	/^void set_mode(int on_off, int mode)$/;"	f	typeref:typename:void

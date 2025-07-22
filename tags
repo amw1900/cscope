@@ -1,0 +1,734 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/Users/alanwright/src/cscope-15.8b/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	/05e6ab4b/
+$(ACLOCAL_M4)	Makefile	/^$(ACLOCAL_M4):  $(am__aclocal_m4_deps)$/;"	t
+$(ACLOCAL_M4)	Makefile.in	/^$(ACLOCAL_M4):  $(am__aclocal_m4_deps)$/;"	t
+$(am__aclocal_m4_deps)	Makefile	/^$(am__aclocal_m4_deps):$/;"	t
+$(am__aclocal_m4_deps)	Makefile.in	/^$(am__aclocal_m4_deps):$/;"	t
+$(am__recursive_targets)	Makefile	/^$(am__recursive_targets):$/;"	t
+$(am__recursive_targets)	Makefile.in	/^$(am__recursive_targets):$/;"	t
+$(srcdir)/Makefile.in	Makefile	/^$(srcdir)\/Makefile.in:  $(srcdir)\/Makefile.am  $(am__configure_deps)$/;"	t
+$(srcdir)/Makefile.in	Makefile.in	/^$(srcdir)\/Makefile.in:  $(srcdir)\/Makefile.am  $(am__configure_deps)$/;"	t
+$(srcdir)/config.h.in	Makefile	/^$(srcdir)\/config.h.in:  $(am__configure_deps) $/;"	t
+$(srcdir)/config.h.in	Makefile.in	/^$(srcdir)\/config.h.in:  $(am__configure_deps) $/;"	t
+$(top_builddir)/config.status	Makefile	/^$(top_builddir)\/config.status: $(top_srcdir)\/configure $(CONFIG_STATUS_DEPENDENCIES)$/;"	t
+$(top_builddir)/config.status	Makefile.in	/^$(top_builddir)\/config.status: $(top_srcdir)\/configure $(CONFIG_STATUS_DEPENDENCIES)$/;"	t
+$(top_srcdir)/configure	Makefile	/^$(top_srcdir)\/configure:  $(am__configure_deps)$/;"	t
+$(top_srcdir)/configure	Makefile.in	/^$(top_srcdir)\/configure:  $(am__configure_deps)$/;"	t
+-g	config.status	/^  alias -g '${1+"$@"}'='"$@"'$/;"	a
+-g	configure	/^  alias -g '${1+"$@"}'='"$@"'$/;"	a
+-g	configure	/^  alias -g '\\${1+\\"\\$@\\"}'='\\"\\$@\\"'$/;"	a
+ACLOCAL	Makefile	/^ACLOCAL = ${SHELL} \/Users\/alanwright\/src\/cscope-15.8b\/missing aclocal-1.14$/;"	m
+ACLOCAL	Makefile.in	/^ACLOCAL = @ACLOCAL@$/;"	m
+ACLOCAL_M4	Makefile	/^ACLOCAL_M4 = $(top_srcdir)\/aclocal.m4$/;"	m
+ACLOCAL_M4	Makefile.in	/^ACLOCAL_M4 = $(top_srcdir)\/aclocal.m4$/;"	m
+AC_CHECK_CURSES	configure.in	/^AC_DEFUN([AC_CHECK_CURSES],[$/;"	m
+AC_CHECK_GNOME	configure.in	/^AC_DEFUN([AC_CHECK_GNOME],[$/;"	m
+AC_NCURSES	configure.in	/^AC_DEFUN([AC_NCURSES], [$/;"	m
+AC_PROG_CC	aclocal.m4	/^m4_define([AC_PROG_CC],$/;"	d
+AC_SEARCH_NCURSES	configure.in	/^AC_DEFUN([AC_SEARCH_NCURSES], [$/;"	m
+AC_TYPE_LONG_LONG_INT	aclocal.m4	/^AC_DEFUN([AC_TYPE_LONG_LONG_INT],$/;"	m
+AC_TYPE_UNSIGNED_LONG_LONG_INT	aclocal.m4	/^AC_DEFUN([AC_TYPE_UNSIGNED_LONG_LONG_INT],$/;"	m
+AC_USE_OSF1_CURSES	configure.in	/^AC_DEFUN([AC_USE_OSF1_CURSES], [$/;"	m
+AC_USE_SUNOS_CURSES	configure.in	/^AC_DEFUN([AC_USE_SUNOS_CURSES], [$/;"	m
+AC_USE_SYSV_CURSES	configure.in	/^AC_DEFUN([AC_USE_SYSV_CURSES], [$/;"	m
+AMTAR	Makefile	/^AMTAR = $${TAR-tar}$/;"	m
+AMTAR	Makefile.in	/^AMTAR = @AMTAR@$/;"	m
+AM_AUTOMAKE_VERSION	aclocal.m4	/^AC_DEFUN([AM_AUTOMAKE_VERSION],$/;"	m
+AM_AUX_DIR_EXPAND	aclocal.m4	/^AC_DEFUN([AM_AUX_DIR_EXPAND],$/;"	m
+AM_CONDITIONAL	aclocal.m4	/^AC_DEFUN([AM_CONDITIONAL],$/;"	m
+AM_DEFAULT_VERBOSITY	Makefile	/^AM_DEFAULT_VERBOSITY = 1$/;"	m
+AM_DEFAULT_VERBOSITY	Makefile.in	/^AM_DEFAULT_VERBOSITY = @AM_DEFAULT_VERBOSITY@$/;"	m
+AM_DEP_TRACK	aclocal.m4	/^AC_DEFUN([AM_DEP_TRACK],$/;"	m
+AM_INIT_AUTOMAKE	aclocal.m4	/^AC_DEFUN([AM_INIT_AUTOMAKE],$/;"	m
+AM_MAKE_INCLUDE	aclocal.m4	/^AC_DEFUN([AM_MAKE_INCLUDE],$/;"	m
+AM_MISSING_HAS_RUN	aclocal.m4	/^AC_DEFUN([AM_MISSING_HAS_RUN],$/;"	m
+AM_MISSING_PROG	aclocal.m4	/^AC_DEFUN([AM_MISSING_PROG],$/;"	m
+AM_OUTPUT_DEPENDENCY_COMMANDS	aclocal.m4	/^AC_DEFUN([AM_OUTPUT_DEPENDENCY_COMMANDS],$/;"	m
+AM_PROG_CC_C_O	aclocal.m4	/^AC_DEFUN_ONCE([AM_PROG_CC_C_O], [AC_REQUIRE([AC_PROG_CC])])$/;"	m
+AM_PROG_INSTALL_SH	aclocal.m4	/^AC_DEFUN([AM_PROG_INSTALL_SH],$/;"	m
+AM_PROG_INSTALL_STRIP	aclocal.m4	/^AC_DEFUN([AM_PROG_INSTALL_STRIP],$/;"	m
+AM_PROG_LEX	aclocal.m4	/^AC_DEFUN([AM_PROG_LEX],$/;"	m
+AM_RECURSIVE_TARGETS	Makefile	/^AM_RECURSIVE_TARGETS = $(am__recursive_targets:-recursive=) TAGS CTAGS \\$/;"	m
+AM_RECURSIVE_TARGETS	Makefile.in	/^AM_RECURSIVE_TARGETS = $(am__recursive_targets:-recursive=) TAGS CTAGS \\$/;"	m
+AM_RUN_LOG	aclocal.m4	/^AC_DEFUN([AM_RUN_LOG],$/;"	m
+AM_SANITY_CHECK	aclocal.m4	/^AC_DEFUN([AM_SANITY_CHECK],$/;"	m
+AM_SET_CURRENT_AUTOMAKE_VERSION	aclocal.m4	/^AC_DEFUN([AM_SET_CURRENT_AUTOMAKE_VERSION],$/;"	m
+AM_SET_DEPDIR	aclocal.m4	/^AC_DEFUN([AM_SET_DEPDIR],$/;"	m
+AM_SET_LEADING_DOT	aclocal.m4	/^AC_DEFUN([AM_SET_LEADING_DOT],$/;"	m
+AM_SILENT_RULES	aclocal.m4	/^AC_DEFUN([AM_SILENT_RULES],$/;"	m
+AM_SUBST_NOTMAKE	aclocal.m4	/^AC_DEFUN([AM_SUBST_NOTMAKE], [_AM_SUBST_NOTMAKE($@)])$/;"	m
+AM_V_GEN	Makefile	/^AM_V_GEN = $(am__v_GEN_$(V))$/;"	m
+AM_V_GEN	Makefile.in	/^AM_V_GEN = $(am__v_GEN_@AM_V@)$/;"	m
+AM_V_P	Makefile	/^AM_V_P = $(am__v_P_$(V))$/;"	m
+AM_V_P	Makefile.in	/^AM_V_P = $(am__v_P_@AM_V@)$/;"	m
+AM_V_at	Makefile	/^AM_V_at = $(am__v_at_$(V))$/;"	m
+AM_V_at	Makefile.in	/^AM_V_at = $(am__v_at_@AM_V@)$/;"	m
+AUTOCONF	Makefile	/^AUTOCONF = ${SHELL} \/Users\/alanwright\/src\/cscope-15.8b\/missing autoconf$/;"	m
+AUTOCONF	Makefile.in	/^AUTOCONF = @AUTOCONF@$/;"	m
+AUTOHEADER	Makefile	/^AUTOHEADER = ${SHELL} \/Users\/alanwright\/src\/cscope-15.8b\/missing autoheader$/;"	m
+AUTOHEADER	Makefile.in	/^AUTOHEADER = @AUTOHEADER@$/;"	m
+AUTOMAKE	Makefile	/^AUTOMAKE = ${SHELL} \/Users\/alanwright\/src\/cscope-15.8b\/missing automake-1.14$/;"	m
+AUTOMAKE	Makefile.in	/^AUTOMAKE = @AUTOMAKE@$/;"	m
+AWK	Makefile	/^AWK = awk$/;"	m
+AWK	Makefile.in	/^AWK = @AWK@$/;"	m
+BSD	config.h	/^#define BSD /;"	d
+BSD	configure.in	/^		AC_DEFINE(BSD, 1, [We're using a BSD-flavoured Unix])$/;"	d
+CC	Makefile	/^CC = gcc$/;"	m
+CC	Makefile.in	/^CC = @CC@$/;"	m
+CCDEPMODE	Makefile	/^CCDEPMODE = depmode=gcc3$/;"	m
+CCDEPMODE	Makefile.in	/^CCDEPMODE = @CCDEPMODE@$/;"	m
+CFLAGS	Makefile	/^CFLAGS = -g -O2$/;"	m
+CFLAGS	Makefile.in	/^CFLAGS = @CFLAGS@$/;"	m
+CONFIG_CLEAN_FILES	Makefile	/^CONFIG_CLEAN_FILES =$/;"	m
+CONFIG_CLEAN_FILES	Makefile.in	/^CONFIG_CLEAN_FILES =$/;"	m
+CONFIG_CLEAN_VPATH_FILES	Makefile	/^CONFIG_CLEAN_VPATH_FILES =$/;"	m
+CONFIG_CLEAN_VPATH_FILES	Makefile.in	/^CONFIG_CLEAN_VPATH_FILES =$/;"	m
+CONFIG_HEADER	Makefile	/^CONFIG_HEADER = config.h$/;"	m
+CONFIG_HEADER	Makefile.in	/^CONFIG_HEADER = config.h$/;"	m
+CPP	Makefile	/^CPP = gcc -E$/;"	m
+CPP	Makefile.in	/^CPP = @CPP@$/;"	m
+CPPFLAGS	Makefile	/^CPPFLAGS = $/;"	m
+CPPFLAGS	Makefile.in	/^CPPFLAGS = @CPPFLAGS@$/;"	m
+CSCOPE	Makefile	/^CSCOPE = cscope$/;"	m
+CSCOPE	Makefile.in	/^CSCOPE = cscope$/;"	m
+CTAGS	Makefile	/^CTAGS = ctags$/;"	m
+CTAGS	Makefile	/^CTAGS: ctags$/;"	t
+CTAGS	Makefile.in	/^CTAGS = ctags$/;"	m
+CTAGS	Makefile.in	/^CTAGS: ctags$/;"	t
+CURSES_INCLUDEDIR	Makefile	/^CURSES_INCLUDEDIR =  -DRENAMED_NCURSES$/;"	m
+CURSES_INCLUDEDIR	Makefile.in	/^CURSES_INCLUDEDIR = @CURSES_INCLUDEDIR@$/;"	m
+CURSES_LIBS	Makefile	/^CURSES_LIBS = -lcurses$/;"	m
+CURSES_LIBS	Makefile.in	/^CURSES_LIBS = @CURSES_LIBS@$/;"	m
+CYGPATH_W	Makefile	/^CYGPATH_W = echo$/;"	m
+CYGPATH_W	Makefile.in	/^CYGPATH_W = @CYGPATH_W@$/;"	m
+DEFS	Makefile	/^DEFS = -DHAVE_CONFIG_H$/;"	m
+DEFS	Makefile.in	/^DEFS = @DEFS@$/;"	m
+DEPDIR	Makefile	/^DEPDIR = .deps$/;"	m
+DEPDIR	Makefile.in	/^DEPDIR = @DEPDIR@$/;"	m
+DISTFILES	Makefile	/^DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)$/;"	m
+DISTFILES	Makefile.in	/^DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)$/;"	m
+DIST_ARCHIVES	Makefile	/^DIST_ARCHIVES = $(distdir).tar.gz$/;"	m
+DIST_ARCHIVES	Makefile.in	/^DIST_ARCHIVES = $(distdir).tar.gz$/;"	m
+DIST_COMMON	Makefile	/^DIST_COMMON = INSTALL NEWS README AUTHORS ChangeLog \\$/;"	m
+DIST_COMMON	Makefile.in	/^DIST_COMMON = INSTALL NEWS README AUTHORS ChangeLog \\$/;"	m
+DIST_SOURCES	Makefile	/^DIST_SOURCES =$/;"	m
+DIST_SOURCES	Makefile.in	/^DIST_SOURCES =$/;"	m
+DIST_SUBDIRS	Makefile	/^DIST_SUBDIRS = $(SUBDIRS)$/;"	m
+DIST_SUBDIRS	Makefile.in	/^DIST_SUBDIRS = $(SUBDIRS)$/;"	m
+DIST_TARGETS	Makefile	/^DIST_TARGETS = dist-gzip$/;"	m
+DIST_TARGETS	Makefile.in	/^DIST_TARGETS = dist-gzip$/;"	m
+ECHO_C	Makefile	/^ECHO_C = \\c$/;"	m
+ECHO_C	Makefile.in	/^ECHO_C = @ECHO_C@$/;"	m
+ECHO_N	Makefile	/^ECHO_N = $/;"	m
+ECHO_N	Makefile.in	/^ECHO_N = @ECHO_N@$/;"	m
+ECHO_T	Makefile	/^ECHO_T = $/;"	m
+ECHO_T	Makefile.in	/^ECHO_T = @ECHO_T@$/;"	m
+EGREP	Makefile	/^EGREP = \/usr\/bin\/grep -E$/;"	m
+EGREP	Makefile.in	/^EGREP = @EGREP@$/;"	m
+END	configure	/^    cat >&2 <<'END'$/;"	h
+END	configure	/^  cat >&2 <<'END'$/;"	h
+END	configure	/^cat > confinc << 'END'$/;"	h
+EOF	config.guess	/^		    sed 's\/^		\/\/' << EOF >$dummy.c$/;"	h
+EOF	config.guess	/^		sed 's\/^		\/\/' << EOF >$dummy.c$/;"	h
+EOF	config.guess	/^	cat <<-EOF > $dummy.c$/;"	h
+EOF	config.guess	/^	sed 's\/^	\/\/' << EOF >$dummy.c$/;"	h
+EOF	config.guess	/^cat >&2 <<EOF$/;"	h
+EOF	configure	/^cat > conftest.$ac_ext <<EOF$/;"	h
+ETAGS	Makefile	/^ETAGS = etags$/;"	m
+ETAGS	Makefile.in	/^ETAGS = etags$/;"	m
+EXEEXT	Makefile	/^EXEEXT = $/;"	m
+EXEEXT	Makefile.in	/^EXEEXT = @EXEEXT@$/;"	m
+EXTRA_DIST	Makefile	/^EXTRA_DIST = INSTALL.gnu packages$/;"	m
+EXTRA_DIST	Makefile.am	/^EXTRA_DIST = INSTALL.gnu packages$/;"	m
+EXTRA_DIST	Makefile.in	/^EXTRA_DIST = INSTALL.gnu packages$/;"	m
+GREP	Makefile	/^GREP = \/usr\/bin\/grep$/;"	m
+GREP	Makefile.in	/^GREP = @GREP@$/;"	m
+GTAGS	Makefile	/^GTAGS:$/;"	t
+GTAGS	Makefile.in	/^GTAGS:$/;"	t
+GZIP_ENV	Makefile	/^GZIP_ENV = --best$/;"	m
+GZIP_ENV	Makefile.in	/^GZIP_ENV = --best$/;"	m
+HAS_CURSES	config.h	/^#define HAS_CURSES /;"	d
+HAS_CURSES	configure.in	/^AM_CONDITIONAL(HAS_CURSES, test "$has_curses" = true)$/;"	c
+HAVE_ASPRINTF	config.h	/^#define HAVE_ASPRINTF /;"	d
+HAVE_DIRENT_H	config.h	/^#define HAVE_DIRENT_H /;"	d
+HAVE_FCNTL_H	config.h	/^#define HAVE_FCNTL_H /;"	d
+HAVE_GETCWD	config.h	/^#define HAVE_GETCWD /;"	d
+HAVE_GETOPT_LONG	config.h	/^#define HAVE_GETOPT_LONG /;"	d
+HAVE_INTTYPES_H	config.h	/^#define HAVE_INTTYPES_H /;"	d
+HAVE_LSTAT	config.h	/^#define HAVE_LSTAT /;"	d
+HAVE_MEMCPY	config.h	/^#define HAVE_MEMCPY /;"	d
+HAVE_MEMORY_H	config.h	/^#define HAVE_MEMORY_H /;"	d
+HAVE_MEMSET	config.h	/^#define HAVE_MEMSET /;"	d
+HAVE_REGCOMP	config.h	/^#define HAVE_REGCOMP /;"	d
+HAVE_SETMODE	config.h	/^#define HAVE_SETMODE /;"	d
+HAVE_SIGNAL_H	config.h	/^#define HAVE_SIGNAL_H /;"	d
+HAVE_SIGSETJMP	config.h	/^#define HAVE_SIGSETJMP /;"	d
+HAVE_SNPRINTF	config.h	/^#define HAVE_SNPRINTF /;"	d
+HAVE_STDARG_H	config.h	/^#define HAVE_STDARG_H /;"	d
+HAVE_STDINT_H	config.h	/^#define HAVE_STDINT_H /;"	d
+HAVE_STDLIB_H	config.h	/^#define HAVE_STDLIB_H /;"	d
+HAVE_STRCHR	config.h	/^#define HAVE_STRCHR /;"	d
+HAVE_STRERROR	config.h	/^#define HAVE_STRERROR /;"	d
+HAVE_STRINGS_H	config.h	/^#define HAVE_STRINGS_H /;"	d
+HAVE_STRING_H	config.h	/^#define HAVE_STRING_H /;"	d
+HAVE_SYS_STAT_H	config.h	/^#define HAVE_SYS_STAT_H /;"	d
+HAVE_SYS_TERMIOS_H	config.h	/^#define HAVE_SYS_TERMIOS_H /;"	d
+HAVE_SYS_TYPES_H	config.h	/^#define HAVE_SYS_TYPES_H /;"	d
+HAVE_UNISTD_H	config.h	/^#define HAVE_UNISTD_H /;"	d
+HAVE_UNSIGNED_LONG_LONG_INT	config.h	/^#define HAVE_UNSIGNED_LONG_LONG_INT /;"	d
+HAVE_VASPRINTF	config.h	/^#define HAVE_VASPRINTF /;"	d
+HAVE_VSNPRINTF	config.h	/^#define HAVE_VSNPRINTF /;"	d
+HW_FUNC_ASPRINTF	acinclude.m4	/^AC_DEFUN([HW_FUNC_ASPRINTF],$/;"	m
+HW_FUNC_SNPRINTF	acinclude.m4	/^AC_DEFUN([HW_FUNC_SNPRINTF],$/;"	m
+HW_FUNC_VASPRINTF	acinclude.m4	/^AC_DEFUN([HW_FUNC_VASPRINTF],$/;"	m
+HW_FUNC_VA_COPY	acinclude.m4	/^AC_DEFUN([HW_FUNC_VA_COPY],$/;"	m
+HW_FUNC_VSNPRINTF	acinclude.m4	/^AC_DEFUN([HW_FUNC_VSNPRINTF],$/;"	m
+HW_FUNC___VA_COPY	acinclude.m4	/^AC_DEFUN([HW_FUNC___VA_COPY],$/;"	m
+HW_HEADER_STDARG_H	acinclude.m4	/^AC_DEFUN([HW_HEADER_STDARG_H],$/;"	m
+HW_HEADER_VARARGS_H	acinclude.m4	/^AC_DEFUN([HW_HEADER_VARARGS_H],$/;"	m
+ID	Makefile	/^ID: $(am__tagged_files)$/;"	t
+ID	Makefile.in	/^ID: $(am__tagged_files)$/;"	t
+INSTALL	Makefile	/^INSTALL = \/usr\/bin\/install -c$/;"	m
+INSTALL	Makefile.in	/^INSTALL = @INSTALL@$/;"	m
+INSTALL_DATA	Makefile	/^INSTALL_DATA = ${INSTALL} -m 644$/;"	m
+INSTALL_DATA	Makefile.in	/^INSTALL_DATA = @INSTALL_DATA@$/;"	m
+INSTALL_HEADER	Makefile	/^INSTALL_HEADER = $(INSTALL_DATA)$/;"	m
+INSTALL_HEADER	Makefile.in	/^INSTALL_HEADER = $(INSTALL_DATA)$/;"	m
+INSTALL_PROGRAM	Makefile	/^INSTALL_PROGRAM = ${INSTALL}$/;"	m
+INSTALL_PROGRAM	Makefile.in	/^INSTALL_PROGRAM = @INSTALL_PROGRAM@$/;"	m
+INSTALL_SCRIPT	Makefile	/^INSTALL_SCRIPT = ${INSTALL}$/;"	m
+INSTALL_SCRIPT	Makefile.in	/^INSTALL_SCRIPT = @INSTALL_SCRIPT@$/;"	m
+INSTALL_STRIP_PROGRAM	Makefile	/^INSTALL_STRIP_PROGRAM = $(install_sh) -c -s$/;"	m
+INSTALL_STRIP_PROGRAM	Makefile.in	/^INSTALL_STRIP_PROGRAM = @INSTALL_STRIP_PROGRAM@$/;"	m
+LDFLAGS	Makefile	/^LDFLAGS = $/;"	m
+LDFLAGS	Makefile.in	/^LDFLAGS = @LDFLAGS@$/;"	m
+LEX	Makefile	/^LEX = flex$/;"	m
+LEX	Makefile.in	/^LEX = @LEX@$/;"	m
+LEXLIB	Makefile	/^LEXLIB = -ll$/;"	m
+LEXLIB	Makefile.in	/^LEXLIB = @LEXLIB@$/;"	m
+LEX_OUTPUT_ROOT	Makefile	/^LEX_OUTPUT_ROOT = lex.yy$/;"	m
+LEX_OUTPUT_ROOT	Makefile.in	/^LEX_OUTPUT_ROOT = @LEX_OUTPUT_ROOT@$/;"	m
+LIBOBJS	Makefile	/^LIBOBJS = $/;"	m
+LIBOBJS	Makefile.in	/^LIBOBJS = @LIBOBJS@$/;"	m
+LIBS	Makefile	/^LIBS = $/;"	m
+LIBS	Makefile.in	/^LIBS = @LIBS@$/;"	m
+LTLIBOBJS	Makefile	/^LTLIBOBJS = $/;"	m
+LTLIBOBJS	Makefile.in	/^LTLIBOBJS = @LTLIBOBJS@$/;"	m
+Linux	configure.in	/^		AC_DEFINE(Linux, 1, [We're using some variant of Linux])$/;"	d
+MAKEINFO	Makefile	/^MAKEINFO = ${SHELL} \/Users\/alanwright\/src\/cscope-15.8b\/missing makeinfo$/;"	m
+MAKEINFO	Makefile.in	/^MAKEINFO = @MAKEINFO@$/;"	m
+MKDIR_P	Makefile	/^MKDIR_P = .\/install-sh -c -d$/;"	m
+MKDIR_P	Makefile.in	/^MKDIR_P = @MKDIR_P@$/;"	m
+Makefile	Makefile	/^Makefile: $(srcdir)\/Makefile.in $(top_builddir)\/config.status$/;"	t
+Makefile	Makefile.in	/^Makefile: $(srcdir)\/Makefile.in $(top_builddir)\/config.status$/;"	t
+NORMAL_INSTALL	Makefile	/^NORMAL_INSTALL = :$/;"	m
+NORMAL_INSTALL	Makefile.in	/^NORMAL_INSTALL = :$/;"	m
+NORMAL_UNINSTALL	Makefile	/^NORMAL_UNINSTALL = :$/;"	m
+NORMAL_UNINSTALL	Makefile.in	/^NORMAL_UNINSTALL = :$/;"	m
+OBJEXT	Makefile	/^OBJEXT = o$/;"	m
+OBJEXT	Makefile.in	/^OBJEXT = @OBJEXT@$/;"	m
+PACKAGE	Makefile	/^PACKAGE = cscope$/;"	m
+PACKAGE	Makefile.in	/^PACKAGE = @PACKAGE@$/;"	m
+PACKAGE	config.h	/^#define PACKAGE /;"	d
+PACKAGE_BUGREPORT	Makefile	/^PACKAGE_BUGREPORT = $/;"	m
+PACKAGE_BUGREPORT	Makefile.in	/^PACKAGE_BUGREPORT = @PACKAGE_BUGREPORT@$/;"	m
+PACKAGE_BUGREPORT	config.h	/^#define PACKAGE_BUGREPORT /;"	d
+PACKAGE_NAME	Makefile	/^PACKAGE_NAME = cscope$/;"	m
+PACKAGE_NAME	Makefile.in	/^PACKAGE_NAME = @PACKAGE_NAME@$/;"	m
+PACKAGE_NAME	config.h	/^#define PACKAGE_NAME /;"	d
+PACKAGE_STRING	Makefile	/^PACKAGE_STRING = cscope 15.8b$/;"	m
+PACKAGE_STRING	Makefile.in	/^PACKAGE_STRING = @PACKAGE_STRING@$/;"	m
+PACKAGE_STRING	config.h	/^#define PACKAGE_STRING /;"	d
+PACKAGE_TARNAME	Makefile	/^PACKAGE_TARNAME = cscope$/;"	m
+PACKAGE_TARNAME	Makefile.in	/^PACKAGE_TARNAME = @PACKAGE_TARNAME@$/;"	m
+PACKAGE_TARNAME	config.h	/^#define PACKAGE_TARNAME /;"	d
+PACKAGE_URL	Makefile	/^PACKAGE_URL = $/;"	m
+PACKAGE_URL	Makefile.in	/^PACKAGE_URL = @PACKAGE_URL@$/;"	m
+PACKAGE_URL	config.h	/^#define PACKAGE_URL /;"	d
+PACKAGE_VERSION	Makefile	/^PACKAGE_VERSION = 15.8b$/;"	m
+PACKAGE_VERSION	Makefile.in	/^PACKAGE_VERSION = @PACKAGE_VERSION@$/;"	m
+PACKAGE_VERSION	config.h	/^#define PACKAGE_VERSION /;"	d
+PATH_SEPARATOR	Makefile	/^PATH_SEPARATOR = :$/;"	m
+PATH_SEPARATOR	Makefile.in	/^PATH_SEPARATOR = @PATH_SEPARATOR@$/;"	m
+POST_INSTALL	Makefile	/^POST_INSTALL = :$/;"	m
+POST_INSTALL	Makefile.in	/^POST_INSTALL = :$/;"	m
+POST_UNINSTALL	Makefile	/^POST_UNINSTALL = :$/;"	m
+POST_UNINSTALL	Makefile.in	/^POST_UNINSTALL = :$/;"	m
+PRE_INSTALL	Makefile	/^PRE_INSTALL = :$/;"	m
+PRE_INSTALL	Makefile.in	/^PRE_INSTALL = :$/;"	m
+PRE_UNINSTALL	Makefile	/^PRE_UNINSTALL = :$/;"	m
+PRE_UNINSTALL	Makefile.in	/^PRE_UNINSTALL = :$/;"	m
+RECURSIVE_CLEAN_TARGETS	Makefile	/^RECURSIVE_CLEAN_TARGETS = mostlyclean-recursive clean-recursive	\\$/;"	m
+RECURSIVE_CLEAN_TARGETS	Makefile.in	/^RECURSIVE_CLEAN_TARGETS = mostlyclean-recursive clean-recursive	\\$/;"	m
+RECURSIVE_TARGETS	Makefile	/^RECURSIVE_TARGETS = all-recursive check-recursive cscopelist-recursive \\$/;"	m
+RECURSIVE_TARGETS	Makefile.in	/^RECURSIVE_TARGETS = all-recursive check-recursive cscopelist-recursive \\$/;"	m
+SET_MAKE	Makefile	/^SET_MAKE = $/;"	m
+SET_MAKE	Makefile.in	/^SET_MAKE = @SET_MAKE@$/;"	m
+SHELL	Makefile	/^SHELL = \/bin\/sh$/;"	m
+SHELL	Makefile.in	/^SHELL = @SHELL@$/;"	m
+SOURCES	Makefile	/^SOURCES =$/;"	m
+SOURCES	Makefile.in	/^SOURCES =$/;"	m
+STDC_HEADERS	config.h	/^#define STDC_HEADERS /;"	d
+STRIP	Makefile	/^STRIP = $/;"	m
+STRIP	Makefile.in	/^STRIP = @STRIP@$/;"	m
+SUBDIRS	Makefile	/^SUBDIRS = doc src contrib$/;"	m
+SUBDIRS	Makefile.am	/^SUBDIRS = doc src contrib$/;"	m
+SUBDIRS	Makefile.in	/^SUBDIRS = doc src contrib$/;"	m
+TAGS	Makefile	/^TAGS: tags$/;"	t
+TAGS	Makefile.in	/^TAGS: tags$/;"	t
+USE_NCURSES	config.h	/^#define USE_NCURSES /;"	d
+USE_SYSV_CURSES	config.h	/^#define USE_SYSV_CURSES /;"	d
+USING_LEX	configure.in	/^AM_CONDITIONAL(USING_LEX, test "x$LEX" = "xlex")$/;"	c
+USING_LEX	configure.in	/^if test "x$LEX" = "xlex" ; then AC_DEFINE(USING_LEX, 1, $/;"	d
+VERSION	Makefile	/^VERSION = 15.8b$/;"	m
+VERSION	Makefile.in	/^VERSION = @VERSION@$/;"	m
+VERSION	config.h	/^#define VERSION /;"	d
+VPATH	Makefile.in	/^VPATH = @srcdir@$/;"	m
+YACC	Makefile	/^YACC = bison -y$/;"	m
+YACC	Makefile.in	/^YACC = @YACC@$/;"	m
+YFLAGS	Makefile	/^YFLAGS = $/;"	m
+YFLAGS	Makefile.in	/^YFLAGS = @YFLAGS@$/;"	m
+YYTEXT_POINTER	config.h	/^#define YYTEXT_POINTER /;"	d
+[^	configure	/^s\/^ \\('"$ac_word_re"'\\)\\(([^()]*)\\)[	 ]*\\(.*\\)\/P["\\1"]="\\2"\\$/;"	f
+_ACAWK	config.status	/^cat >>"$ac_tmp\/subs1.awk" <<_ACAWK &&$/;"	h
+_ACEOF	configure	/^	 cat confdefs.h - <<_ACEOF >conftest.$ac_ext$/;"	h
+_ACEOF	configure	/^	cat confdefs.h - <<_ACEOF >conftest.$ac_ext$/;"	h
+_ACEOF	configure	/^        cat confdefs.h - <<_ACEOF >conftest.$ac_ext$/;"	h
+_ACEOF	configure	/^       cat confdefs.h - <<_ACEOF >conftest.$ac_ext$/;"	h
+_ACEOF	configure	/^      cat confdefs.h - <<_ACEOF >conftest.$ac_ext$/;"	h
+_ACEOF	configure	/^   cat confdefs.h - <<_ACEOF >conftest.$ac_ext$/;"	h
+_ACEOF	configure	/^  cat <<_ACEOF$/;"	h
+_ACEOF	configure	/^  cat >>confdefs.h <<_ACEOF$/;"	h
+_ACEOF	configure	/^  cat >conftest.l <<_ACEOF$/;"	h
+_ACEOF	configure	/^  cat confdefs.h - <<_ACEOF >conftest.$ac_ext$/;"	h
+_ACEOF	configure	/^cat >&5 <<_ACEOF$/;"	h
+_ACEOF	configure	/^cat >>$CONFIG_STATUS <<_ACEOF || ac_write_fail=1$/;"	h
+_ACEOF	configure	/^cat >>confdefs.h <<_ACEOF$/;"	h
+_ACEOF	configure	/^cat >config.log <<_ACEOF$/;"	h
+_ACEOF	configure	/^cat confdefs.h - <<_ACEOF >conftest.$ac_ext$/;"	h
+_AC_AM_CONFIG_HEADER_HOOK	aclocal.m4	/^AC_DEFUN([_AC_AM_CONFIG_HEADER_HOOK],$/;"	m
+_AC_COMPILER_EXEEXT	aclocal.m4	/^m4_define([_AC_COMPILER_EXEEXT],$/;"	d
+_AC_TYPE_LONG_LONG_SNIPPET	aclocal.m4	/^AC_DEFUN([_AC_TYPE_LONG_LONG_SNIPPET],$/;"	m
+_ALL_SOURCE	config.h	/^# define _ALL_SOURCE /;"	d
+_AM_AUTOCONF_VERSION	aclocal.m4	/^m4_define([_AM_AUTOCONF_VERSION], [])$/;"	d
+_AM_DEPENDENCIES	aclocal.m4	/^AC_DEFUN([_AM_DEPENDENCIES],$/;"	m
+_AM_IF_OPTION	aclocal.m4	/^AC_DEFUN([_AM_IF_OPTION],$/;"	m
+_AM_MANGLE_OPTION	aclocal.m4	/^AC_DEFUN([_AM_MANGLE_OPTION],$/;"	m
+_AM_OUTPUT_DEPENDENCY_COMMANDS	aclocal.m4	/^AC_DEFUN([_AM_OUTPUT_DEPENDENCY_COMMANDS],$/;"	m
+_AM_PROG_CC_C_O	aclocal.m4	/^AC_DEFUN([_AM_PROG_CC_C_O],$/;"	m
+_AM_PROG_TAR	aclocal.m4	/^AC_DEFUN([_AM_PROG_TAR],$/;"	m
+_AM_SET_OPTION	aclocal.m4	/^AC_DEFUN([_AM_SET_OPTION],$/;"	m
+_AM_SET_OPTIONS	aclocal.m4	/^AC_DEFUN([_AM_SET_OPTIONS],$/;"	m
+_AM_SUBST_NOTMAKE	aclocal.m4	/^AC_DEFUN([_AM_SUBST_NOTMAKE])$/;"	m
+_ASBOX	config.status	/^  sed 'h;s\/.\/-\/g;s\/^...\/## \/;s\/...$\/ ##\/;p;x;p;x' <<_ASBOX$/;"	h
+_ASBOX	configure	/^  sed 'h;s\/.\/-\/g;s\/^...\/## \/;s\/...$\/ ##\/;p;x;p;x' <<_ASBOX$/;"	h
+_ASEOF	configure	/^cat >$CONFIG_STATUS <<_ASEOF || as_write_fail=1$/;"	h
+_ASUNAME	configure	/^cat <<_ASUNAME$/;"	h
+_DARWIN_USE_64_BIT_INODE	config.h	/^# define _DARWIN_USE_64_BIT_INODE /;"	d
+_DARWIN_USE_64_BIT_INODE	config.h.in	/^# define _DARWIN_USE_64_BIT_INODE /;"	d	file:
+_GNU_SOURCE	config.h	/^# define _GNU_SOURCE /;"	d
+_HW_FUNC_XPRINTF_REPLACE	acinclude.m4	/^AC_DEFUN([_HW_FUNC_XPRINTF_REPLACE],$/;"	m
+_POSIX_PTHREAD_SEMANTICS	config.h	/^# define _POSIX_PTHREAD_SEMANTICS /;"	d
+_TANDEM_SOURCE	config.h	/^# define _TANDEM_SOURCE /;"	d
+__EXTENSIONS__	config.h	/^# define __EXTENSIONS__ /;"	d
+abs_builddir	Makefile	/^abs_builddir = \/Users\/alanwright\/src\/cscope-15.8b$/;"	m
+abs_builddir	Makefile.in	/^abs_builddir = @abs_builddir@$/;"	m
+abs_srcdir	Makefile	/^abs_srcdir = \/Users\/alanwright\/src\/cscope-15.8b$/;"	m
+abs_srcdir	Makefile.in	/^abs_srcdir = @abs_srcdir@$/;"	m
+abs_top_builddir	Makefile	/^abs_top_builddir = \/Users\/alanwright\/src\/cscope-15.8b$/;"	m
+abs_top_builddir	Makefile.in	/^abs_top_builddir = @abs_top_builddir@$/;"	m
+abs_top_srcdir	Makefile	/^abs_top_srcdir = \/Users\/alanwright\/src\/cscope-15.8b$/;"	m
+abs_top_srcdir	Makefile.in	/^abs_top_srcdir = @abs_top_srcdir@$/;"	m
+ac_ct_CC	Makefile	/^ac_ct_CC = gcc$/;"	m
+ac_ct_CC	Makefile.in	/^ac_ct_CC = @ac_ct_CC@$/;"	m
+ac_fn_c_check_func	configure	/^ac_fn_c_check_func ()$/;"	f
+ac_fn_c_check_header_compile	configure	/^ac_fn_c_check_header_compile ()$/;"	f
+ac_fn_c_check_header_mongrel	configure	/^ac_fn_c_check_header_mongrel ()$/;"	f
+ac_fn_c_check_member	configure	/^ac_fn_c_check_member ()$/;"	f
+ac_fn_c_check_type	configure	/^ac_fn_c_check_type ()$/;"	f
+ac_fn_c_try_compile	configure	/^ac_fn_c_try_compile ()$/;"	f
+ac_fn_c_try_cpp	configure	/^ac_fn_c_try_cpp ()$/;"	f
+ac_fn_c_try_link	configure	/^ac_fn_c_try_link ()$/;"	f
+ac_fn_c_try_run	configure	/^ac_fn_c_try_run ()$/;"	f
+aix_post_process_depfile	depcomp	/^aix_post_process_depfile ()$/;"	f
+all	Makefile	/^all: config.h$/;"	t
+all	Makefile.in	/^all: config.h$/;"	t
+all-am	Makefile	/^all-am: Makefile config.h$/;"	t
+all-am	Makefile.in	/^all-am: Makefile config.h$/;"	t
+am--refresh	Makefile	/^am--refresh: Makefile$/;"	t
+am--refresh	Makefile.in	/^am--refresh: Makefile$/;"	t
+am__CONFIG_DISTCLEAN_FILES	Makefile	/^am__CONFIG_DISTCLEAN_FILES = config.status config.cache config.log \\$/;"	m
+am__CONFIG_DISTCLEAN_FILES	Makefile.in	/^am__CONFIG_DISTCLEAN_FILES = config.status config.cache config.log \\$/;"	m
+am__aclocal_m4_deps	Makefile	/^am__aclocal_m4_deps = $(top_srcdir)\/acinclude.m4 \\$/;"	m
+am__aclocal_m4_deps	Makefile.in	/^am__aclocal_m4_deps = $(top_srcdir)\/acinclude.m4 \\$/;"	m
+am__can_run_installinfo	Makefile	/^am__can_run_installinfo = \\$/;"	m
+am__can_run_installinfo	Makefile.in	/^am__can_run_installinfo = \\$/;"	m
+am__cd	Makefile	/^am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd$/;"	m
+am__cd	Makefile.in	/^am__cd = CDPATH="$${ZSH_VERSION+.}$(PATH_SEPARATOR)" && cd$/;"	m
+am__configure_deps	Makefile	/^am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \\$/;"	m
+am__configure_deps	Makefile.in	/^am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \\$/;"	m
+am__define_uniq_tagged_files	Makefile	/^am__define_uniq_tagged_files = \\$/;"	m
+am__define_uniq_tagged_files	Makefile.in	/^am__define_uniq_tagged_files = \\$/;"	m
+am__distuninstallcheck_listfiles	Makefile	/^am__distuninstallcheck_listfiles = $(distuninstallcheck_listfiles) \\$/;"	m
+am__distuninstallcheck_listfiles	Makefile.in	/^am__distuninstallcheck_listfiles = $(distuninstallcheck_listfiles) \\$/;"	m
+am__include	Makefile	/^am__include = include$/;"	m
+am__include	Makefile.in	/^am__include = @am__include@$/;"	m
+am__is_gnu_make	Makefile	/^am__is_gnu_make = test -n '$(MAKEFILE_LIST)' && test -n '$(MAKELEVEL)'$/;"	m
+am__is_gnu_make	Makefile.in	/^am__is_gnu_make = test -n '$(MAKEFILE_LIST)' && test -n '$(MAKELEVEL)'$/;"	m
+am__leading_dot	Makefile	/^am__leading_dot = .$/;"	m
+am__leading_dot	Makefile.in	/^am__leading_dot = @am__leading_dot@$/;"	m
+am__make_dryrun	Makefile	/^am__make_dryrun = (target_option=n; $(am__make_running_with_option))$/;"	m
+am__make_dryrun	Makefile.in	/^am__make_dryrun = (target_option=n; $(am__make_running_with_option))$/;"	m
+am__make_keepgoing	Makefile	/^am__make_keepgoing = (target_option=k; $(am__make_running_with_option))$/;"	m
+am__make_keepgoing	Makefile.in	/^am__make_keepgoing = (target_option=k; $(am__make_running_with_option))$/;"	m
+am__make_running_with_option	Makefile	/^am__make_running_with_option = \\$/;"	m
+am__make_running_with_option	Makefile.in	/^am__make_running_with_option = \\$/;"	m
+am__post_remove_distdir	Makefile	/^am__post_remove_distdir = $(am__remove_distdir)$/;"	m
+am__post_remove_distdir	Makefile.in	/^am__post_remove_distdir = $(am__remove_distdir)$/;"	m
+am__quote	Makefile	/^am__quote = $/;"	m
+am__quote	Makefile.in	/^am__quote = @am__quote@$/;"	m
+am__recursive_targets	Makefile	/^am__recursive_targets = \\$/;"	m
+am__recursive_targets	Makefile.in	/^am__recursive_targets = \\$/;"	m
+am__relativize	Makefile	/^am__relativize = \\$/;"	m
+am__relativize	Makefile.in	/^am__relativize = \\$/;"	m
+am__remove_distdir	Makefile	/^am__remove_distdir = \\$/;"	m
+am__remove_distdir	Makefile.in	/^am__remove_distdir = \\$/;"	m
+am__tagged_files	Makefile	/^am__tagged_files = $(HEADERS) $(SOURCES) $(TAGS_FILES) \\$/;"	m
+am__tagged_files	Makefile.in	/^am__tagged_files = $(HEADERS) $(SOURCES) $(TAGS_FILES) \\$/;"	m
+am__tar	Makefile	/^am__tar = $${TAR-tar} chof - "$$tardir"$/;"	m
+am__tar	Makefile.in	/^am__tar = @am__tar@$/;"	m
+am__uniquify_input	Makefile	/^am__uniquify_input = $(AWK) '\\$/;"	m
+am__uniquify_input	Makefile.in	/^am__uniquify_input = $(AWK) '\\$/;"	m
+am__untar	Makefile	/^am__untar = $${TAR-tar} xf -$/;"	m
+am__untar	Makefile.in	/^am__untar = @am__untar@$/;"	m
+am__v_GEN_	Makefile	/^am__v_GEN_ = $(am__v_GEN_$(AM_DEFAULT_VERBOSITY))$/;"	m
+am__v_GEN_	Makefile.in	/^am__v_GEN_ = $(am__v_GEN_@AM_DEFAULT_V@)$/;"	m
+am__v_GEN_0	Makefile	/^am__v_GEN_0 = @echo "  GEN     " $@;$/;"	m
+am__v_GEN_0	Makefile.in	/^am__v_GEN_0 = @echo "  GEN     " $@;$/;"	m
+am__v_GEN_1	Makefile	/^am__v_GEN_1 = $/;"	m
+am__v_GEN_1	Makefile.in	/^am__v_GEN_1 = $/;"	m
+am__v_P_	Makefile	/^am__v_P_ = $(am__v_P_$(AM_DEFAULT_VERBOSITY))$/;"	m
+am__v_P_	Makefile.in	/^am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)$/;"	m
+am__v_P_0	Makefile	/^am__v_P_0 = false$/;"	m
+am__v_P_0	Makefile.in	/^am__v_P_0 = false$/;"	m
+am__v_P_1	Makefile	/^am__v_P_1 = :$/;"	m
+am__v_P_1	Makefile.in	/^am__v_P_1 = :$/;"	m
+am__v_at_	Makefile	/^am__v_at_ = $(am__v_at_$(AM_DEFAULT_VERBOSITY))$/;"	m
+am__v_at_	Makefile.in	/^am__v_at_ = $(am__v_at_@AM_DEFAULT_V@)$/;"	m
+am__v_at_0	Makefile	/^am__v_at_0 = @$/;"	m
+am__v_at_0	Makefile.in	/^am__v_at_0 = @$/;"	m
+am__v_at_1	Makefile	/^am__v_at_1 = $/;"	m
+am__v_at_1	Makefile.in	/^am__v_at_1 = $/;"	m
+as_fn_append	config.status	/^  as_fn_append ()$/;"	f
+as_fn_append	configure	/^  as_fn_append ()$/;"	f
+as_fn_arith	config.status	/^  as_fn_arith ()$/;"	f
+as_fn_arith	configure	/^  as_fn_arith ()$/;"	f
+as_fn_error	config.status	/^as_fn_error ()$/;"	f
+as_fn_error	configure	/^as_fn_error ()$/;"	f
+as_fn_executable_p	config.status	/^as_fn_executable_p ()$/;"	f
+as_fn_executable_p	configure	/^as_fn_executable_p ()$/;"	f
+as_fn_exit	config.status	/^as_fn_exit ()$/;"	f
+as_fn_exit	configure	/^as_fn_exit ()$/;"	f
+as_fn_failure	configure	/^as_fn_failure () { as_fn_return 1; }$/;"	f
+as_fn_mkdir_p	config.status	/^as_fn_mkdir_p ()$/;"	f
+as_fn_mkdir_p	configure	/^as_fn_mkdir_p ()$/;"	f
+as_fn_ret_failure	configure	/^as_fn_ret_failure () { return 1; }$/;"	f
+as_fn_ret_success	configure	/^as_fn_ret_success () { return 0; }$/;"	f
+as_fn_set_status	config.status	/^as_fn_set_status ()$/;"	f
+as_fn_set_status	configure	/^as_fn_set_status ()$/;"	f
+as_fn_success	configure	/^as_fn_success () { as_fn_return 0; }$/;"	f
+as_fn_unset	config.status	/^as_fn_unset ()$/;"	f
+as_fn_unset	configure	/^as_fn_unset ()$/;"	f
+bindir	Makefile	/^bindir = ${exec_prefix}\/bin$/;"	m
+bindir	Makefile.in	/^bindir = @bindir@$/;"	m
+build	Makefile	/^build = arm-apple-darwin21.1.0$/;"	m
+build	Makefile.in	/^build = @build@$/;"	m
+build_alias	Makefile	/^build_alias = $/;"	m
+build_alias	Makefile.in	/^build_alias = @build_alias@$/;"	m
+build_cpu	Makefile	/^build_cpu = arm$/;"	m
+build_cpu	Makefile.in	/^build_cpu = @build_cpu@$/;"	m
+build_os	Makefile	/^build_os = darwin21.1.0$/;"	m
+build_os	Makefile.in	/^build_os = @build_os@$/;"	m
+build_triplet	Makefile	/^build_triplet = arm-apple-darwin21.1.0$/;"	m
+build_triplet	Makefile.in	/^build_triplet = @build@$/;"	m
+build_vendor	Makefile	/^build_vendor = apple$/;"	m
+build_vendor	Makefile.in	/^build_vendor = @build_vendor@$/;"	m
+builddir	Makefile	/^builddir = .$/;"	m
+builddir	Makefile.in	/^builddir = @builddir@$/;"	m
+check	Makefile	/^check: check-recursive$/;"	t
+check	Makefile.in	/^check: check-recursive$/;"	t
+check-am	Makefile	/^check-am: all-am$/;"	t
+check-am	Makefile.in	/^check-am: all-am$/;"	t
+clean	Makefile	/^clean: clean-recursive$/;"	t
+clean	Makefile.in	/^clean: clean-recursive$/;"	t
+clean-am	Makefile	/^clean-am: clean-generic mostlyclean-am$/;"	t
+clean-am	Makefile.in	/^clean-am: clean-generic mostlyclean-am$/;"	t
+clean-cscope	Makefile	/^clean-cscope:$/;"	t
+clean-cscope	Makefile.in	/^clean-cscope:$/;"	t
+clean-generic	Makefile	/^clean-generic:$/;"	t
+clean-generic	Makefile.in	/^clean-generic:$/;"	t
+config.h	Makefile	/^config.h: stamp-h1$/;"	t
+config.h	Makefile.in	/^config.h: stamp-h1$/;"	t
+contrib	Makefile.am	/^SUBDIRS = doc src contrib$/;"	s
+cscope	Makefile	/^cscope: cscope.files$/;"	t
+cscope	Makefile.in	/^cscope: cscope.files$/;"	t
+cscope	configure.in	/^AC_INIT([cscope],[15.8b])$/;"	p
+cscope.files	Makefile	/^cscope.files: clean-cscope cscopelist$/;"	t
+cscope.files	Makefile.in	/^cscope.files: clean-cscope cscopelist$/;"	t
+cscopelist	Makefile	/^cscopelist: cscopelist-recursive$/;"	t
+cscopelist	Makefile.in	/^cscopelist: cscopelist-recursive$/;"	t
+cscopelist-am	Makefile	/^cscopelist-am: $(am__tagged_files)$/;"	t
+cscopelist-am	Makefile.in	/^cscopelist-am: $(am__tagged_files)$/;"	t
+ctags	Makefile	/^ctags: ctags-recursive$/;"	t
+ctags	Makefile.in	/^ctags: ctags-recursive$/;"	t
+ctags-am	Makefile	/^ctags-am: $(TAGS_DEPENDENCIES) $(am__tagged_files)$/;"	t
+ctags-am	Makefile.in	/^ctags-am: $(TAGS_DEPENDENCIES) $(am__tagged_files)$/;"	t
+datadir	Makefile	/^datadir = ${datarootdir}$/;"	m
+datadir	Makefile.in	/^datadir = @datadir@$/;"	m
+datarootdir	Makefile	/^datarootdir = ${prefix}\/share$/;"	m
+datarootdir	Makefile.in	/^datarootdir = @datarootdir@$/;"	m
+dist	Makefile	/^dist dist-all:$/;"	t
+dist	Makefile.in	/^dist dist-all:$/;"	t
+dist-all	Makefile	/^dist dist-all:$/;"	t
+dist-all	Makefile.in	/^dist dist-all:$/;"	t
+dist-bzip2	Makefile	/^dist-bzip2: distdir$/;"	t
+dist-bzip2	Makefile.in	/^dist-bzip2: distdir$/;"	t
+dist-gzip	Makefile	/^dist-gzip: distdir$/;"	t
+dist-gzip	Makefile.in	/^dist-gzip: distdir$/;"	t
+dist-hook	Makefile	/^dist-hook:$/;"	t
+dist-hook	Makefile.am	/^dist-hook:$/;"	t
+dist-hook	Makefile.in	/^dist-hook:$/;"	t
+dist-lzip	Makefile	/^dist-lzip: distdir$/;"	t
+dist-lzip	Makefile.in	/^dist-lzip: distdir$/;"	t
+dist-shar	Makefile	/^dist-shar: distdir$/;"	t
+dist-shar	Makefile.in	/^dist-shar: distdir$/;"	t
+dist-tarZ	Makefile	/^dist-tarZ: distdir$/;"	t
+dist-tarZ	Makefile.in	/^dist-tarZ: distdir$/;"	t
+dist-xz	Makefile	/^dist-xz: distdir$/;"	t
+dist-xz	Makefile.in	/^dist-xz: distdir$/;"	t
+dist-zip	Makefile	/^dist-zip: distdir$/;"	t
+dist-zip	Makefile.in	/^dist-zip: distdir$/;"	t
+distcheck	Makefile	/^distcheck: dist$/;"	t
+distcheck	Makefile.in	/^distcheck: dist$/;"	t
+distclean	Makefile	/^distclean: distclean-recursive$/;"	t
+distclean	Makefile.in	/^distclean: distclean-recursive$/;"	t
+distclean-am	Makefile	/^distclean-am: clean-am distclean-generic distclean-hdr distclean-tags$/;"	t
+distclean-am	Makefile.in	/^distclean-am: clean-am distclean-generic distclean-hdr distclean-tags$/;"	t
+distclean-generic	Makefile	/^distclean-generic:$/;"	t
+distclean-generic	Makefile.in	/^distclean-generic:$/;"	t
+distclean-hdr	Makefile	/^distclean-hdr:$/;"	t
+distclean-hdr	Makefile.in	/^distclean-hdr:$/;"	t
+distclean-tags	Makefile	/^distclean-tags:$/;"	t
+distclean-tags	Makefile.in	/^distclean-tags:$/;"	t
+distcleancheck	Makefile	/^distcleancheck: distclean$/;"	t
+distcleancheck	Makefile.in	/^distcleancheck: distclean$/;"	t
+distcleancheck_listfiles	Makefile	/^distcleancheck_listfiles = find . -type f -print$/;"	m
+distcleancheck_listfiles	Makefile.in	/^distcleancheck_listfiles = find . -type f -print$/;"	m
+distdir	Makefile	/^distdir = $(PACKAGE)-$(VERSION)$/;"	m
+distdir	Makefile	/^distdir: $(DISTFILES)$/;"	t
+distdir	Makefile.in	/^distdir = $(PACKAGE)-$(VERSION)$/;"	m
+distdir	Makefile.in	/^distdir: $(DISTFILES)$/;"	t
+distuninstallcheck	Makefile	/^distuninstallcheck:$/;"	t
+distuninstallcheck	Makefile.in	/^distuninstallcheck:$/;"	t
+distuninstallcheck_listfiles	Makefile	/^distuninstallcheck_listfiles = find . -type f -print$/;"	m
+distuninstallcheck_listfiles	Makefile.in	/^distuninstallcheck_listfiles = find . -type f -print$/;"	m
+doc	Makefile.am	/^SUBDIRS = doc src contrib$/;"	s
+docdir	Makefile	/^docdir = ${datarootdir}\/doc\/${PACKAGE_TARNAME}$/;"	m
+docdir	Makefile.in	/^docdir = @docdir@$/;"	m
+dvi	Makefile	/^dvi: dvi-recursive$/;"	t
+dvi	Makefile.in	/^dvi: dvi-recursive$/;"	t
+dvi-am	Makefile	/^dvi-am:$/;"	t
+dvi-am	Makefile.in	/^dvi-am:$/;"	t
+dvidir	Makefile	/^dvidir = ${docdir}$/;"	m
+dvidir	Makefile.in	/^dvidir = @dvidir@$/;"	m
+exec_prefix	Makefile	/^exec_prefix = ${prefix}$/;"	m
+exec_prefix	Makefile.in	/^exec_prefix = @exec_prefix@$/;"	m
+func_cl_dashL	compile	/^func_cl_dashL ()$/;"	f
+func_cl_dashl	compile	/^func_cl_dashl ()$/;"	f
+func_cl_wrapper	compile	/^func_cl_wrapper ()$/;"	f
+func_file_conv	compile	/^func_file_conv ()$/;"	f
+get_dirname	ylwrap	/^get_dirname ()$/;"	f
+give_advice	missing	/^give_advice ()$/;"	f
+gnome1	Makefile	/^gnome1 = $/;"	m
+gnome1	Makefile.in	/^gnome1 = @gnome1@$/;"	m
+gnome2	Makefile	/^gnome2 = $/;"	m
+gnome2	Makefile.in	/^gnome2 = @gnome2@$/;"	m
+guard	ylwrap	/^guard ()$/;"	f
+host	Makefile	/^host = arm-apple-darwin21.1.0$/;"	m
+host	Makefile.in	/^host = @host@$/;"	m
+host_alias	Makefile	/^host_alias = $/;"	m
+host_alias	Makefile.in	/^host_alias = @host_alias@$/;"	m
+host_cpu	Makefile	/^host_cpu = arm$/;"	m
+host_cpu	Makefile.in	/^host_cpu = @host_cpu@$/;"	m
+host_os	Makefile	/^host_os = darwin21.1.0$/;"	m
+host_os	Makefile.in	/^host_os = @host_os@$/;"	m
+host_triplet	Makefile	/^host_triplet = arm-apple-darwin21.1.0$/;"	m
+host_triplet	Makefile.in	/^host_triplet = @host@$/;"	m
+host_vendor	Makefile	/^host_vendor = apple$/;"	m
+host_vendor	Makefile.in	/^host_vendor = @host_vendor@$/;"	m
+html	Makefile	/^html: html-recursive$/;"	t
+html	Makefile.in	/^html: html-recursive$/;"	t
+html-am	Makefile	/^html-am:$/;"	t
+html-am	Makefile.in	/^html-am:$/;"	t
+htmldir	Makefile	/^htmldir = ${docdir}$/;"	m
+htmldir	Makefile.in	/^htmldir = @htmldir@$/;"	m
+in	configure	/^  alias in your environment" "$LINENO" 5$/;"	a
+includedir	Makefile	/^includedir = ${prefix}\/include$/;"	m
+includedir	Makefile.in	/^includedir = @includedir@$/;"	m
+info	Makefile	/^info: info-recursive$/;"	t
+info	Makefile.in	/^info: info-recursive$/;"	t
+info-am	Makefile	/^info-am:$/;"	t
+info-am	Makefile.in	/^info-am:$/;"	t
+infodir	Makefile	/^infodir = ${datarootdir}\/info$/;"	m
+infodir	Makefile.in	/^infodir = @infodir@$/;"	m
+install	Makefile	/^install: install-recursive$/;"	t
+install	Makefile.in	/^install: install-recursive$/;"	t
+install-am	Makefile	/^install-am: all-am$/;"	t
+install-am	Makefile.in	/^install-am: all-am$/;"	t
+install-data	Makefile	/^install-data: install-data-recursive$/;"	t
+install-data	Makefile.in	/^install-data: install-data-recursive$/;"	t
+install-data-am	Makefile	/^install-data-am:$/;"	t
+install-data-am	Makefile.in	/^install-data-am:$/;"	t
+install-dvi	Makefile	/^install-dvi: install-dvi-recursive$/;"	t
+install-dvi	Makefile.in	/^install-dvi: install-dvi-recursive$/;"	t
+install-dvi-am	Makefile	/^install-dvi-am:$/;"	t
+install-dvi-am	Makefile.in	/^install-dvi-am:$/;"	t
+install-exec	Makefile	/^install-exec: install-exec-recursive$/;"	t
+install-exec	Makefile.in	/^install-exec: install-exec-recursive$/;"	t
+install-exec-am	Makefile	/^install-exec-am:$/;"	t
+install-exec-am	Makefile.in	/^install-exec-am:$/;"	t
+install-html	Makefile	/^install-html: install-html-recursive$/;"	t
+install-html	Makefile.in	/^install-html: install-html-recursive$/;"	t
+install-html-am	Makefile	/^install-html-am:$/;"	t
+install-html-am	Makefile.in	/^install-html-am:$/;"	t
+install-info	Makefile	/^install-info: install-info-recursive$/;"	t
+install-info	Makefile.in	/^install-info: install-info-recursive$/;"	t
+install-info-am	Makefile	/^install-info-am:$/;"	t
+install-info-am	Makefile.in	/^install-info-am:$/;"	t
+install-man	Makefile	/^install-man:$/;"	t
+install-man	Makefile.in	/^install-man:$/;"	t
+install-pdf	Makefile	/^install-pdf: install-pdf-recursive$/;"	t
+install-pdf	Makefile.in	/^install-pdf: install-pdf-recursive$/;"	t
+install-pdf-am	Makefile	/^install-pdf-am:$/;"	t
+install-pdf-am	Makefile.in	/^install-pdf-am:$/;"	t
+install-ps	Makefile	/^install-ps: install-ps-recursive$/;"	t
+install-ps	Makefile.in	/^install-ps: install-ps-recursive$/;"	t
+install-ps-am	Makefile	/^install-ps-am:$/;"	t
+install-ps-am	Makefile.in	/^install-ps-am:$/;"	t
+install-strip	Makefile	/^install-strip:$/;"	t
+install-strip	Makefile.in	/^install-strip:$/;"	t
+install_sh	Makefile	/^install_sh = ${SHELL} \/Users\/alanwright\/src\/cscope-15.8b\/install-sh$/;"	m
+install_sh	Makefile.in	/^install_sh = @install_sh@$/;"	m
+install_sh_DATA	Makefile	/^install_sh_DATA = $(install_sh) -c -m 644$/;"	m
+install_sh_DATA	Makefile.in	/^install_sh_DATA = $(install_sh) -c -m 644$/;"	m
+install_sh_PROGRAM	Makefile	/^install_sh_PROGRAM = $(install_sh) -c$/;"	m
+install_sh_PROGRAM	Makefile.in	/^install_sh_PROGRAM = $(install_sh) -c$/;"	m
+install_sh_SCRIPT	Makefile	/^install_sh_SCRIPT = $(install_sh) -c$/;"	m
+install_sh_SCRIPT	Makefile.in	/^install_sh_SCRIPT = $(install_sh) -c$/;"	m
+installcheck	Makefile	/^installcheck: installcheck-recursive$/;"	t
+installcheck	Makefile.in	/^installcheck: installcheck-recursive$/;"	t
+installcheck-am	Makefile	/^installcheck-am:$/;"	t
+installcheck-am	Makefile.in	/^installcheck-am:$/;"	t
+installdirs	Makefile	/^installdirs: installdirs-recursive$/;"	t
+installdirs	Makefile.in	/^installdirs: installdirs-recursive$/;"	t
+installdirs-am	Makefile	/^installdirs-am:$/;"	t
+installdirs-am	Makefile.in	/^installdirs-am:$/;"	t
+libdir	Makefile	/^libdir = ${exec_prefix}\/lib$/;"	m
+libdir	Makefile.in	/^libdir = @libdir@$/;"	m
+libexecdir	Makefile	/^libexecdir = ${exec_prefix}\/libexec$/;"	m
+libexecdir	Makefile.in	/^libexecdir = @libexecdir@$/;"	m
+localedir	Makefile	/^localedir = ${datarootdir}\/locale$/;"	m
+localedir	Makefile.in	/^localedir = @localedir@$/;"	m
+localstatedir	Makefile	/^localstatedir = ${prefix}\/var$/;"	m
+localstatedir	Makefile.in	/^localstatedir = @localstatedir@$/;"	m
+maintainer-clean	Makefile	/^maintainer-clean: maintainer-clean-recursive$/;"	t
+maintainer-clean	Makefile.in	/^maintainer-clean: maintainer-clean-recursive$/;"	t
+maintainer-clean-am	Makefile	/^maintainer-clean-am: distclean-am maintainer-clean-generic$/;"	t
+maintainer-clean-am	Makefile.in	/^maintainer-clean-am: distclean-am maintainer-clean-generic$/;"	t
+maintainer-clean-generic	Makefile	/^maintainer-clean-generic:$/;"	t
+maintainer-clean-generic	Makefile.in	/^maintainer-clean-generic:$/;"	t
+make_dummy_depfile	depcomp	/^make_dummy_depfile ()$/;"	f
+mandir	Makefile	/^mandir = ${datarootdir}\/man$/;"	m
+mandir	Makefile.in	/^mandir = @mandir@$/;"	m
+mkdir_p	Makefile	/^mkdir_p = $(MKDIR_P)$/;"	m
+mkdir_p	Makefile.in	/^mkdir_p = @mkdir_p@$/;"	m
+mkinstalldirs	Makefile	/^mkinstalldirs = $(SHELL) $(top_srcdir)\/mkinstalldirs$/;"	m
+mkinstalldirs	Makefile.in	/^mkinstalldirs = $(SHELL) $(top_srcdir)\/mkinstalldirs$/;"	m
+mostlyclean	Makefile	/^mostlyclean: mostlyclean-recursive$/;"	t
+mostlyclean	Makefile.in	/^mostlyclean: mostlyclean-recursive$/;"	t
+mostlyclean-am	Makefile	/^mostlyclean-am: mostlyclean-generic$/;"	t
+mostlyclean-am	Makefile.in	/^mostlyclean-am: mostlyclean-generic$/;"	t
+mostlyclean-generic	Makefile	/^mostlyclean-generic:$/;"	t
+mostlyclean-generic	Makefile.in	/^mostlyclean-generic:$/;"	t
+oldincludedir	Makefile	/^oldincludedir = \/usr\/include$/;"	m
+oldincludedir	Makefile.in	/^oldincludedir = @oldincludedir@$/;"	m
+pdf	Makefile	/^pdf: pdf-recursive$/;"	t
+pdf	Makefile.in	/^pdf: pdf-recursive$/;"	t
+pdf-am	Makefile	/^pdf-am:$/;"	t
+pdf-am	Makefile.in	/^pdf-am:$/;"	t
+pdfdir	Makefile	/^pdfdir = ${docdir}$/;"	m
+pdfdir	Makefile.in	/^pdfdir = @pdfdir@$/;"	m
+pkgdatadir	Makefile	/^pkgdatadir = $(datadir)\/cscope$/;"	m
+pkgdatadir	Makefile.in	/^pkgdatadir = $(datadir)\/@PACKAGE@$/;"	m
+pkgincludedir	Makefile	/^pkgincludedir = $(includedir)\/cscope$/;"	m
+pkgincludedir	Makefile.in	/^pkgincludedir = $(includedir)\/@PACKAGE@$/;"	m
+pkglibdir	Makefile	/^pkglibdir = $(libdir)\/cscope$/;"	m
+pkglibdir	Makefile.in	/^pkglibdir = $(libdir)\/@PACKAGE@$/;"	m
+pkglibexecdir	Makefile	/^pkglibexecdir = $(libexecdir)\/cscope$/;"	m
+pkglibexecdir	Makefile.in	/^pkglibexecdir = $(libexecdir)\/@PACKAGE@$/;"	m
+prefix	Makefile	/^prefix = \/usr\/local$/;"	m
+prefix	Makefile.in	/^prefix = @prefix@$/;"	m
+program_details	missing	/^program_details ()$/;"	f
+program_transform_name	Makefile	/^program_transform_name = s,x,x,$/;"	m
+program_transform_name	Makefile.in	/^program_transform_name = @program_transform_name@$/;"	m
+ps	Makefile	/^ps: ps-recursive$/;"	t
+ps	Makefile.in	/^ps: ps-recursive$/;"	t
+ps-am	Makefile	/^ps-am:$/;"	t
+ps-am	Makefile.in	/^ps-am:$/;"	t
+psdir	Makefile	/^psdir = ${docdir}$/;"	m
+psdir	Makefile.in	/^psdir = @psdir@$/;"	m
+quote_for_sed	ylwrap	/^quote_for_sed ()$/;"	f
+sbindir	Makefile	/^sbindir = ${exec_prefix}\/sbin$/;"	m
+sbindir	Makefile.in	/^sbindir = @sbindir@$/;"	m
+set_base_from	depcomp	/^set_base_from ()$/;"	f
+set_dir_from	depcomp	/^set_dir_from ()$/;"	f
+sharedstatedir	Makefile	/^sharedstatedir = ${prefix}\/com$/;"	m
+sharedstatedir	Makefile.in	/^sharedstatedir = @sharedstatedir@$/;"	m
+src	Makefile.am	/^SUBDIRS = doc src contrib$/;"	s
+srcdir	Makefile	/^srcdir = .$/;"	m
+srcdir	Makefile.in	/^srcdir = @srcdir@$/;"	m
+stamp-h1	Makefile	/^stamp-h1: $(srcdir)\/config.h.in $(top_builddir)\/config.status$/;"	t
+stamp-h1	Makefile.in	/^stamp-h1: $(srcdir)\/config.h.in $(top_builddir)\/config.status$/;"	t
+subdir	Makefile	/^subdir = .$/;"	m
+subdir	Makefile.in	/^subdir = .$/;"	m
+sysconfdir	Makefile	/^sysconfdir = ${prefix}\/etc$/;"	m
+sysconfdir	Makefile.in	/^sysconfdir = @sysconfdir@$/;"	m
+tags	Makefile	/^tags: tags-recursive$/;"	t
+tags	Makefile.in	/^tags: tags-recursive$/;"	t
+tags-am	Makefile	/^tags-am: $(TAGS_DEPENDENCIES) $(am__tagged_files)$/;"	t
+tags-am	Makefile.in	/^tags-am: $(TAGS_DEPENDENCIES) $(am__tagged_files)$/;"	t
+target_alias	Makefile	/^target_alias = $/;"	m
+target_alias	Makefile.in	/^target_alias = @target_alias@$/;"	m
+top_build_prefix	Makefile	/^top_build_prefix = $/;"	m
+top_build_prefix	Makefile.in	/^top_build_prefix = @top_build_prefix@$/;"	m
+top_builddir	Makefile	/^top_builddir = .$/;"	m
+top_builddir	Makefile.in	/^top_builddir = @top_builddir@$/;"	m
+top_distdir	Makefile	/^top_distdir = $(distdir)$/;"	m
+top_distdir	Makefile.in	/^top_distdir = $(distdir)$/;"	m
+top_srcdir	Makefile	/^top_srcdir = .$/;"	m
+top_srcdir	Makefile.in	/^top_srcdir = @top_srcdir@$/;"	m
+transform	Makefile	/^transform = $(program_transform_name)$/;"	m
+transform	Makefile.in	/^transform = $(program_transform_name)$/;"	m
+uninstall	Makefile	/^uninstall: uninstall-recursive$/;"	t
+uninstall	Makefile.in	/^uninstall: uninstall-recursive$/;"	t
+uninstall-am	Makefile	/^uninstall-am:$/;"	t
+uninstall-am	Makefile.in	/^uninstall-am:$/;"	t
