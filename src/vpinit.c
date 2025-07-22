@@ -44,12 +44,7 @@
 
 static char const rcsid[] = "$Id: vpinit.c,v 1.9 2014/11/20 21:12:54 broeker Exp $";
 
-#if !NOMALLOC
 char	**vpdirs;	/* directories (including current) in view path */
-#else
-char	vpdirs[MAXDIR][DIRLEN + 1];
-#define	MAXVPATH (MAXDIR * (DIRLEN + 1))
-#endif
 int	vpndirs;	/* number of directories in view path */
 
 void
@@ -60,21 +55,16 @@ vpinit(char *current_dir)
 	char	buf[MAXPATH + 1];
 	int	i;
 	char	*s;
-#if NOMALLOC
-	char	*node;		/* view path node */
-	char	vpathbuf[MAXVPATH + 1];
-#endif
 	
 	/* if an existing directory list is to be updated, free it */
 	if (current_dir != NULL && vpndirs > 0) {
-#if !NOMALLOC
 		for (i = 0; i < vpndirs; ++i) {
 			free(vpdirs[i]);
 		}
 		free(vpdirs);
-#endif
 		vpndirs = 0;
 	}
+
 	/* return if the directory list has been computed */
 	/* or there isn't a view path environment variable */
 	if (vpndirs > 0 || (vpath = getenv("VPATH")) == NULL ||
@@ -95,7 +85,6 @@ vpinit(char *current_dir)
 		return;
 	}
 	suffix = &current_dir[i];
-#if !NOMALLOC
 
 	/* count the nodes in the view path */
 	vpndirs = 1;
@@ -124,48 +113,13 @@ vpinit(char *current_dir)
 	}
 	/* convert the view path nodes to directories */
 	for (i = 0; i < vpndirs; ++i) {
-		s = mymalloc(strlen(vpdirs[i]) + strlen(suffix) + 1);
-		(void) strcpy(s, vpdirs[i]);
-		(void) strcat(s, suffix);
+		size_t	allocsz = strlen(vpdirs[i]) + strlen(suffix) + 1;
+
+		s = mymalloc(allocsz);
+		(void) strlcpy(s, vpdirs[i], allocsz);
+		(void) strlcat(s, suffix, allocsz);
 		vpdirs[i] = s;
 	}
+
 	free(vpath);
-#else
-	/* don't change VPATH in the environment */
-	if (strlen(vpath) > MAXVPATH) {
-		(void) fprintf(stderr, "%s: VPATH is longer than %d characters: %s\n", argv0, MAXVPATH, vpath);
-		return;
-	}
-	(void) strcpy(vpathbuf, vpath);
-	s = vpathbuf;
-	
-	/* convert the view path nodes to directories */
-	while (*s != '\0') {
-		
-		/* get the next node */
-		node = s;
-		while (*s != '\0' && *++s != ':') {
-			if (*s == '\n') {
-				*s = '\0';
-			}
-		}
-		if (*s != '\0') {
-			*s++ = '\0';
-		}
-		/* ignore a directory that is too long */
-		if (strlen(node) + strlen(suffix) > DIRLEN) {
-			(void) fprintf(stderr, "%s: VPATH directory is longer than %d characters: %s%s\n", argv0, DIRLEN, node, suffix);
-		}
-		else if (vpndirs >= MAXDIR) {
-			(void) fprintf(stderr, "%s: VPATH has more than %d nodes\n", argv0, vpndirs);
-			return;
-		}
-		else {
-			/* create the view path directory */
-			(void) strcpy(vpdirs[vpndirs], node);
-			(void) strcat(vpdirs[vpndirs], suffix);
-			++vpndirs;
-		}
-	}
-#endif
 }

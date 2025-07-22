@@ -133,25 +133,40 @@ samelist(FILE *oldrefs, char **names, int count)
 }
 
 
-/* create the file name(s) used for a new cross-referene */
-
+/*
+ * Create the file name(s) used for a new cross-referene.
+ * Given reffile (dir/cscope.out), construct three new names
+ * in the same directory by prepending n to the basename.
+ *
+ *      newreffile       → dir/ncscope.out
+ *	newinvname       → dir/ncscope.in.out
+ *      newinvpost       → dir/ncscope.po.out
+ */
 void setup_build_filenames(char *reffile)
 {
     char *path;			/* file pathname */
     char *s;			/* pointer to basename in path */
+    size_t allocsz = strlen(reffile) + sizeof ("ncscope.in.out");
 
-    path = mymalloc(strlen(reffile) + 10u);
-    strcpy(path, reffile);
+    path = mymalloc(allocsz);
+    strlcpy(path, reffile, allocsz);
+
     s = mybasename(path);
     *s = '\0';
-    strcat(path, "n");
+    strlcat(path, "n", allocsz);
     ++s;
-    strcpy(s, mybasename(reffile));
+
+    allocsz -= (s - path);
+
+    strlcpy(s, mybasename(reffile), allocsz);
     newreffile = my_strdup(path);
-    strcpy(s, mybasename(invname));
+
+    strlcpy(s, mybasename(invname), allocsz);
     newinvname = my_strdup(path);
-    strcpy(s, mybasename(invpost));
+
+    strlcpy(s, mybasename(invpost), allocsz);
     newinvpost = my_strdup(path);
+
     free(path);
 }
 

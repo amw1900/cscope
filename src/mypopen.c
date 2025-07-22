@@ -101,28 +101,33 @@ myopen(char *path, int flag, int mode)
 FILE *
 myfopen(char *path, char *mode)
 {
-    /* opens a file pointer and then sets close-on-exec for the file */
-    FILE *fp;
+	/* opens a file pointer and then sets close-on-exec for the file */
+	FILE	*fp;
+	int	rc = 0;
 
-    fp = fopen(path, mode);
+	if ((fp = fopen(path, mode)) == NULL)
+		return(NULL);
 
 #ifdef SETMODE
-    if (fp && ! strchr(mode, 'b')) {
-	SETMODE(fileno(fp), O_TEXT);
-    }
+	if (strchr(mode, 'b') == NULL) {
+		SETMODE(fileno(fp), O_TEXT);
+	}
 #endif /* SETMODE */
-	
-#ifdef __DJGPP__ /* FIXME: test feature, not platform */
-    /* HBB 20010312: DOS GCC doesn't have FD_CLOEXEC (yet), so it 
-     * always fails this call. Have to skip that step */
-    if(fp)
-#else
-	if(fp && (fcntl(fileno(fp), F_SETFD, CLOSE_ON_EXEC) != -1))
-#endif
-	    return(fp);
 
-	else
-	    return(NULL);
+
+#ifndef __DJGPP__ /* FIXME: test feature, not platform */
+	/*
+	 * HBB 20010312: DOS GCC doesn't have FD_CLOEXEC (yet),
+	 * so it always fails this call. Have to skip that step.
+	 */
+	rc = fcntl(fileno(fp), F_SETFD, CLOSE_ON_EXEC);
+#endif
+
+	if (rc != -1)
+		return(fp);
+
+	fclose(fp);
+	return(NULL);
 }
 
 FILE *

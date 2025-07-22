@@ -73,6 +73,9 @@ static	BOOL	elseelif;		/* #else or #elif found */
 static	BOOL	esudef;			/* enum/struct/union global definition */
 static	BOOL	external;		/* external definition */
 static	int	externalbraces;		/* external definition outer brace count */
+static	BOOL	externCbrace;		/* next '{' opens an extern "C" block:
+					   don't count it, so definitions inside
+					   stay file-scope globals */
 static	BOOL	fcndef;			/* function definition */
 static	BOOL	global;			/* file global scope (outside functions) */
 static	size_t	iflevel;		/* #if nesting level */
@@ -180,8 +183,14 @@ wsnl		[ \t\r\v\f\n]|{comment}
 		}
 
 \{		{	/* count unmatched left braces for fcn def detection */
+			if (externCbrace == YES) {
+				/* '{' of an extern "C" block: don't count it,
+				 * so definitions inside remain file-scope */
+				externCbrace = NO;
+				goto more;
+			}
 			++braces;
-			
+
 			/* mark an untagged enum/struct/union so its beginning
 			   can be found */
 			if (tagdef) {
@@ -459,6 +468,21 @@ class{wsnl}+{identifier}({wsnl}|{identifier}|[():])*\{	{	/* class definition */
 			classdef = YES;
 			tagdef =  'c';
 			yyless(5);		/* eat up 'class', and re-scan */
+			yy_set_bol(0);
+			goto more;
+			/* NOTREACHED */
+		}
+
+extern{wsnl}+\"C(\+\+)?\"{wsnl}*\{	{	/* extern "C" block */
+			/* Mark the coming '{' as not opening a scope: an
+			 * extern "C" block does not change the scope of the
+			 * definitions inside it, so treating it like an
+			 * ordinary brace made cscope miss every global
+			 * definition in headers wrapped in extern "C".
+			 * The matching '}' is harmless: the close-brace
+			 * rule clamps the brace count at zero. */
+			externCbrace = YES;
+			yyless(6);		/* eat up 'extern', and re-scan */
 			yy_set_bol(0);
 			goto more;
 			/* NOTREACHED */
@@ -835,6 +859,7 @@ initscanner(char *srcfile)
 	esudef = NO;		/* enum/struct/union global definition */
 	external = NO;		/* external definition */
 	externalbraces = -1;	/* external definition outer brace count */
+	externCbrace = NO;	/* next '{' opens an extern "C" block */
 	fcndef = NO;		/* function definition */
 	global = YES;		/* file global scope (outside functions) */
 	iflevel = 0;		/* #if nesting level */

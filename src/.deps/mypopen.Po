@@ -35,13 +35,12 @@ mypopen.o: mypopen.c /usr/include/stdc-predef.h /usr/include/stdio.h \
  /usr/include/sys/select.h /usr/include/bits/select.h \
  /usr/include/bits/types/struct_timeval.h /usr/include/sys/wait.h \
  /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h global.h \
- ../config.h /usr/include/ctype.h /usr/include/bits/types/locale_t.h \
- /usr/include/bits/types/__locale_t.h /usr/include/stdlib.h \
- /usr/include/bits/floatn.h /usr/include/bits/floatn-common.h \
- /usr/include/alloca.h /usr/include/bits/stdlib-bsearch.h \
- /usr/include/bits/stdlib-float.h /usr/include/string.h \
- /usr/include/strings.h constants.h invlib.h \
- /usr/lib/gcc/x86_64-redhat-linux/8/include/limits.h \
+ ../config.h /usr/include/string.h /usr/include/bits/types/locale_t.h \
+ /usr/include/bits/types/__locale_t.h /usr/include/strings.h \
+ /usr/include/ctype.h /usr/include/stdlib.h /usr/include/bits/floatn.h \
+ /usr/include/bits/floatn-common.h /usr/include/alloca.h \
+ /usr/include/bits/stdlib-bsearch.h /usr/include/bits/stdlib-float.h \
+ constants.h invlib.h /usr/lib/gcc/x86_64-redhat-linux/8/include/limits.h \
  /usr/lib/gcc/x86_64-redhat-linux/8/include/syslimits.h \
  /usr/include/limits.h /usr/include/bits/posix1_lim.h \
  /usr/include/bits/local_lim.h /usr/include/linux/limits.h \
@@ -191,11 +190,15 @@ global.h:
 
 ../config.h:
 
-/usr/include/ctype.h:
+/usr/include/string.h:
 
 /usr/include/bits/types/locale_t.h:
 
 /usr/include/bits/types/__locale_t.h:
+
+/usr/include/strings.h:
+
+/usr/include/ctype.h:
 
 /usr/include/stdlib.h:
 
@@ -208,10 +211,6 @@ global.h:
 /usr/include/bits/stdlib-bsearch.h:
 
 /usr/include/bits/stdlib-float.h:
-
-/usr/include/string.h:
-
-/usr/include/strings.h:
 
 constants.h:
 

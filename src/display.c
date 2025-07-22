@@ -56,6 +56,10 @@
 #include <errno.h>
 #include <stdarg.h>
 
+#if HAVE_BSD_STRING_H
+#include <bsd/string.h>
+#endif
+
 #ifndef HAVE_SIGSETJMP
 # define sigsetjmp(a,b) setjmp(a)
 # define siglongjmp(a,b) longjmp(a,b)
@@ -592,7 +596,7 @@ postmsg(char *msg)
 		addstr(msg);
 		refresh();
 	}
-	(void) strncpy(lastmsg, msg, sizeof(lastmsg) - 1);
+	(void) strlcpy(lastmsg, msg, sizeof(lastmsg));
 }
 
 /* clearmsg clears the first message line */
@@ -648,6 +652,7 @@ posterr(char *msg, ...)
         vsnprintf(errbuf, sizeof(errbuf), msg, ap);
         postmsg2(errbuf); 
     }
+    va_end(ap);
 }
 
 /* display a fatal error mesg -- stderr *after* shutting down curses */
@@ -666,6 +671,7 @@ postfatal(const char *msg, ...)
 
 	/* display fatal error messages */
 	fprintf(stderr,"%s",errbuf);
+	va_end(ap);
 
 	/* shut down */
 	myexit(1);

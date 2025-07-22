@@ -1,7 +1,7 @@
 dnl Process this file with autoconf to produce a configure script.
-AC_INIT([cscope],[15.8b])
+AC_INIT([cscope],[15.9b])
 AC_CONFIG_SRCDIR([src/crossref.c])
-AM_INIT_AUTOMAKE
+AM_INIT_AUTOMAKE([foreign])
 AC_CONFIG_HEADERS([config.h:config.h.in])
 AC_PREREQ([2.69])
 AC_CANONICAL_HOST
@@ -401,6 +401,10 @@ dnl Checks for library functions.
 AC_CHECK_FUNCS(strchr memcpy memset setmode _setmode)
 AC_CHECK_FUNCS(getcwd regcmp regcomp strerror lstat)
 AC_CHECK_FUNCS(fixkeypad getopt_long)
+
+dnl strlcpy/strlcat: use the C library's if present, otherwise build our
+dnl compat implementations (src/strlcpy.c, src/strlcat.c) via $(LIBOBJS).
+AC_REPLACE_FUNCS([strlcpy strlcat])
 HW_FUNC_SNPRINTF
 HW_FUNC_VSNPRINTF
 HW_FUNC_ASPRINTF

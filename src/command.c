@@ -50,6 +50,25 @@
 static char const rcsid[] = "$Id: command.c,v 1.37 2014/11/20 21:12:54 broeker Exp $";
 
 
+/*
+ * Usable width (screen minus column separators) split among the
+ * variable-width columns; the rest goes to the source-text column.
+ */
+#define	COLBUDGET_PLAIN(cols)	(((cols) - 5) / 3)
+#define	COLBUDGET_OGS(cols)	(((cols) - 7) / 5)
+
+#define HDRWIDTH_SUBSYSTEM	9	/* strlen("Subsystem") */
+#define HDRWIDTH_FILE		4	/* strlen("File") */
+#define HDRWIDTH_FUNCTION	8	/* strlen("Function") */
+#define HDRWIDTH_BOOK		4	/* strlen("Book") */
+
+#define	SETWIDTH(field, size, limit)			\
+      do {						\
+          if (((field) > (size)) && ((size) > (limit)))	\
+              (field) = (size);				\
+      } while (0)
+
+
 int	selecting;
 unsigned int   curdispline = 0;
 
@@ -361,7 +380,8 @@ command(int commandc)
 	}
 	/* if the ^ command, redirect output to a temp file */
 	if (commandc == '^') {
-	    strcat(strcat(newpat, " >"), temp2);
+	    strlcat(newpat, " >", sizeof (newpat));
+	    strlcat(newpat, temp2, sizeof (newpat));
 	    /* HBB 20020708: somebody might have even
 	     * their non-interactive default shells
 	     * complain about clobbering
@@ -371,8 +391,8 @@ command(int commandc)
 	}
 	exitcurses();
 	if ((file = mypopen(newpat, "w")) == NULL) {
-	    fprintf(stderr, "\
-cscope: cannot open pipe to shell command: %s\n", newpat);
+	    fprintf(stderr, "cscope: cannot open pipe to shell command: %s\n",
+		newpat);
 	} else {
 	    seekline(1);
 	    while ((c = getc(refsfound)) != EOF) {
@@ -576,6 +596,7 @@ readrefs(char *filename)
 		return(NO);
 	}
 	if ((c = getc(file)) == EOF) {	/* if file is empty */
+		fclose(file);
 		return(NO);
 	}
 	totallines = 0;
@@ -593,6 +614,8 @@ readrefs(char *filename)
 			return(NO);
 		}
 		countrefs();
+	} else {
+		fclose(file);
 	}
 	return(YES);
 }
@@ -733,6 +756,10 @@ changestring(void)
     for (i = 0; 
 	 fscanf(refsfound, "%" PATHLEN_STR "s%*s%" NUMLEN_STR "s%*[^\n]", newfile, linenum) == 2;
 	 ++i) {
+
+	if (i >= totallines)
+		break;
+
 	/* see if the line is to be changed */
 	if (change[i] == YES) {
 	    anymarked = YES;
@@ -786,7 +813,6 @@ changestring(void)
 	}
     }
     fprintf(script, "w\nq\n!\n");	/* write and quit */
-    fclose(script);
 
     /* if any line was marked */
     if (anymarked == YES) {
@@ -794,12 +820,14 @@ changestring(void)
 	/* edit the files */
 	clearprompt();
 	refresh();
+	fclose(script);
 	fprintf(stderr, "Changed lines:\n\r");
 	execute("sh", "sh", temp2, NULL);
 	askforreturn();
 	seekline(1);
     } else {
     nochange:
+	fclose(script);
 	clearprompt();
     }
     changing = NO;
@@ -869,81 +897,89 @@ scrollbar(MOUSE *p)
 }
 
 
-/* count the references found */
+/*
+ * Count the references found and find the length of the file, function,
+ * and line number display fields.
+ *
+ * The fscanf return value is the number of fields successfully assigned.
+ * The file, function and linenum values are then used to compute the
+ * display-column widths.
+ *
+ * HBB NOTE 2012-04-07: it may look like we shouldn't assign tempstring
+ * here, because the content of tempstring is not used, but it has to be
+ * assigned so that we get 4 values back from fscanf.
+ */
 void
 countrefs(void)
 {
-    char    *subsystem;             /* OGS subsystem name */
-    char    *book;                  /* OGS book name */
-    char    file[PATHLEN + 1];      /* file name */
-    char    function[PATLEN + 1];   /* function name */
-    char    linenum[NUMLEN + 1];    /* line number */
-    int     i;
+	char	*subsystem;		/* OGS subsystem name */
+	char	*book;			/* OGS book name */
+	char	file[PATHLEN + 1];	/* file name */
+	char	function[PATLEN + 1];	/* function name */
+	char	linenum[NUMLEN + 1];	/* line number */
+	int		i;
 
-    /* count the references found and find the length of the file,
-       function, and line number display fields */
-    subsystemlen = 9;	/* strlen("Subsystem") */
-    booklen = 4;		/* strlen("Book") */
-    filelen = 4;		/* strlen("File") */
-    fcnlen = 8;		/* strlen("Function") */
-    numlen = 0;
-    /* HBB NOTE 2012-04-07: it may look like we shouldn't assing tempstring here,
-     * since it's not used.  But it has to be assigned just so the return value
-     * of fscanf will actually reach 4. */
-    while (EOF != (i = fscanf(refsfound, 
-			      "%" PATHLEN_STR "s%" PATLEN_STR "s%" NUMLEN_STR "s %" TEMPSTRING_LEN_STR "[^\n]",
-			      file, function, linenum, tempstring
-			     )
-	          )
-	  ) {
-	if (   (i != 4)
-	    || !isgraph((unsigned char) *file)
-	    || !isgraph((unsigned char) *function)
-	    || !isdigit((unsigned char) *linenum)
-	   ) {
-	    postmsg("File does not have expected format");
-	    totallines = 0;
-	    disprefs = 0;
-	    return;
+	subsystemlen	= HDRWIDTH_SUBSYSTEM;
+	booklen		= HDRWIDTH_BOOK;
+	filelen		= HDRWIDTH_FILE;
+	fcnlen		= HDRWIDTH_FUNCTION;
+	numlen = 0;
+
+	/*
+	 * The trailing %*[^\n] discards any text past TEMPSTRING_LEN: a source
+	 * line may be up to STMTMAX (> TEMPSTRING_LEN) chars, and without this
+	 * the overflow would be mis-parsed as the next record's fields, failing
+	 * the format check.  (changestring() guards the same way.)
+	 */
+	while (EOF != (i = fscanf(refsfound,
+	    "%" PATHLEN_STR "s%" PATLEN_STR "s%" NUMLEN_STR "s %" TEMPSTRING_LEN_STR "[^\n]%*[^\n]",
+	    file, function, linenum, tempstring))) {
+
+		if ((i != 4) ||
+		    !isgraph((unsigned char) *file) ||
+		    !isgraph((unsigned char) *function) ||
+		    !isdigit((unsigned char) *linenum)) {
+			postmsg("File does not have expected format");
+			totallines = 0;
+			disprefs = 0;
+			return;
+		}
+
+		if ((i = strlen(pathcomponents(file, dispcomponents))) > filelen) {
+			filelen = i;
+		}
+
+		if (ogs == YES) {
+			ogsnames(file, &subsystem, &book);
+			if ((i = strlen(subsystem)) > subsystemlen) {
+				subsystemlen = i;
+			}
+			if ((i = strlen(book)) > booklen) {
+				booklen = i;
+			}
+		}
+		if ((i = strlen(function)) > fcnlen) {
+			fcnlen = i;
+		}
+		if ((i = strlen(linenum)) > numlen) {
+			numlen = i;
+		}
+		++totallines;
 	}
-	if ((i = strlen(pathcomponents(file, dispcomponents))) > filelen) {
-	    filelen = i;
-	}
+
+	rewind(refsfound);
+
+	/*
+	 * Restrict the width of displayed columns.
+	 */
 	if (ogs == YES) {
-	    ogsnames(file, &subsystem, &book);
-	    if ((i = strlen(subsystem)) > subsystemlen) {
-		subsystemlen = i;
-	    }
-	    if ((i = strlen(book)) > booklen) {
-		booklen = i;
-	    }
+		i = COLBUDGET_OGS(COLS);
+	} else {
+		i = COLBUDGET_PLAIN(COLS);
 	}
-	if ((i = strlen(function)) > fcnlen) {
-	    fcnlen = i;
-	}
-	if ((i = strlen(linenum)) > numlen) {
-	    numlen = i;
-	}
-	++totallines;
-    }
-    rewind(refsfound);
 
-    /* restrict the width of displayed columns */
-    /* HBB FIXME 20060419: magic number alert! */ 
-    i = (COLS - 5) / 3;
-    if (ogs == YES) {
-	i = (COLS - 7) / 5;
-    }
-    if (filelen > i && i > 4) {
-	filelen = i;
-    }
-    if (subsystemlen > i && i > 9) {
-	subsystemlen = i;
-    }
-    if (booklen > i && i > 4) {
-	booklen = i;
-    }
-    if (fcnlen > i && i > 8) {
-	fcnlen = i;
-    }
+	SETWIDTH(filelen, i, HDRWIDTH_FILE);
+	SETWIDTH(subsystemlen, i, HDRWIDTH_SUBSYSTEM);
+	SETWIDTH(booklen, i, HDRWIDTH_BOOK);
+	SETWIDTH(fcnlen, i, HDRWIDTH_FUNCTION);
 }

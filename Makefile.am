@@ -2,7 +2,7 @@
 
 SUBDIRS = doc src contrib
 
-EXTRA_DIST = INSTALL.gnu packages
+EXTRA_DIST = INSTALL.gnu README.md INSTALL.md packages
 
 dist-hook:
 	@for dir in `find $(distdir) -type d -name CVS -print`; do \

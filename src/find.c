@@ -669,16 +669,36 @@ findinclude(char *pattern)
 	return NULL;
 }
 
+/*
+ * Accept C++ qualified names (Foo::bar): the database stores
+ * the unqualified name, so search for the final component
+ */
+static char *
+squash_cplusplus_qualified_name(char *pattern)
+{
+	char	*q;
+	char	*s = pattern;
+
+	while ((q = strstr(s, "::")) != NULL)
+		s = q + 2;
+
+	if (s != pattern)
+		memmove(pattern, s, strlen(s) + 1);
+
+	return (pattern);
+}
+
 /* initialize */
 
 FINDINIT
 findinit(char *pattern)
 {
 	char	buf[PATLEN + 3];
+	char	scratchbuf[PATLEN + 1];
 	BOOL	isregexp = NO;
 	int	i;
 	char	*s;
-	unsigned char c;	/* HBB 20010427: changed uint to uchar */
+	unsigned char c;	/* HBB 2001-04-27: changed uint to uchar */
 
 	/* HBB: be nice: free regexp before allocating a new one */
 	if(isregexp_valid == YES)
@@ -686,10 +706,10 @@ findinit(char *pattern)
 
 	isregexp_valid = NO;
 
+	squash_cplusplus_qualified_name(pattern);
+
 	/* remove trailing white space */
-	for (s = pattern + strlen(pattern) - 1; 
-	     isspace((unsigned char)*s);
-	     --s) {
+	for (s = pattern + strlen(pattern) - 1; isspace((unsigned char)*s); --s) {
 		*s = '\0';
 	}
 
@@ -710,7 +730,7 @@ findinit(char *pattern)
 		return(NOERROR);
 	}
 	/* see if the pattern is a regular expression */
-	if (strpbrk(pattern, "^.[{*+$") != NULL) {
+	if (strpbrk(pattern, "^.[{*+$|(") != NULL) {
 		isregexp = YES;
 	} else {
 		/* check for a valid C symbol */
@@ -723,6 +743,23 @@ findinit(char *pattern)
 				return(NOTSYMBOL);
 			}
 		}
+
+		/*
+		 * A language keyword is stored in the database as a compressed
+		 * control character, never as a searchable symbol, so a symbol
+		 * search for one can never match.
+		 *
+		 * Reject it up front so the search reports no results instead
+		 * of failing on a malformed results file.
+		 *
+		 * Note: lookup() compresses the keyword in place when compress
+		 * is on, so operate on a scratch copy.
+		 */
+		strlcpy(scratchbuf, pattern, sizeof(scratchbuf));
+		if (lookup(scratchbuf) != NULL) {
+			return(NOTSYMBOL);
+		}
+
 		/* look for use of the -T option (truncate symbol to 8
 		   characters) on a database not built with -T */
 		if (trun_syms == YES && isuptodate == YES &&

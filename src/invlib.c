@@ -454,7 +454,7 @@ invnewterm(void)
 	    iteminfo.packword[0] = logicalblk.invblk[3];
 	    iteminfo.packword[1] = logicalblk.invblk[4];
 	    tptr2 = logicalblk.chrblk + iteminfo.e.offset;
-	    strncpy(supfing, tptr2, (int) iteminfo.e.size);
+	    memcpy(supfing, tptr2, (int) iteminfo.e.size);
 	    *(supfing + iteminfo.e.size) = '\0';
 #if DEBUG
 	    printf("backup %d at term=%s to term=%s\n",
@@ -495,7 +495,7 @@ invnewterm(void)
     iteminfo.e.size = len;
     iteminfo.e.space = 0;
     iteminfo.e.post = numpost;
-    strncpy(logicalblk.chrblk + lastinblk, thisterm, len);
+    memcpy(logicalblk.chrblk + lastinblk, thisterm, len);
     amtused += numwilluse;
     logicalblk.invblk[(lastinblk/sizeof(long))+wdlen] = nextpost;
     if ((i = postptr - POST) > 0) {
@@ -747,11 +747,11 @@ invforward(INVCONTROL *invcntl)
 long
 invterm(INVCONTROL *invcntl, char *term)
 {
-	ENTRY * entryptr;
+	ENTRY	*entryptr;
 
 	/* FIXME HBB: magic number alert! (3) */
 	entryptr = (ENTRY *)(invcntl->logblk->invblk + 3) + invcntl->keypnt;
-	strncpy(term, invcntl->logblk->chrblk + entryptr->offset,
+	memcpy(term, invcntl->logblk->chrblk + entryptr->offset,
 		       (int) entryptr->size);
 	*(term + entryptr->size) = '\0';
 	return(entryptr->post);
@@ -882,7 +882,7 @@ invdump(INVCONTROL *invcntl, char *term)
 	printf("\tterm\t\t\tposts\tsize\toffset\tspace\t1st word\n");
 	for (j = 0; j < n && invbreak == 0; j++) {
 		ptr = invcntl->logblk->chrblk + entryptr->offset;
-		strncpy(temp, ptr, (int) entryptr->size);
+		memcpy(temp, ptr, (int) entryptr->size);
 		temp[entryptr->size] = '\0';
 		ptr += (sizeof(long) * (long)((entryptr->size + (sizeof(long) - 1)) / sizeof(long)));
 		printf("%2ld  %-24s\t%5ld\t%3d\t%d\t%d\t%ld\n", j, temp, entryptr->post,

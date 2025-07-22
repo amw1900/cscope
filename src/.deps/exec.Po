@@ -7,18 +7,20 @@ exec.o: exec.c /usr/include/stdc-predef.h /usr/include/unistd.h \
  /usr/lib/gcc/x86_64-redhat-linux/8/include/stddef.h \
  /usr/include/bits/confname.h /usr/include/bits/getopt_posix.h \
  /usr/include/bits/getopt_core.h global.h ../config.h \
- /usr/include/sys/types.h /usr/include/bits/types/clock_t.h \
- /usr/include/bits/types/clockid_t.h /usr/include/bits/types/time_t.h \
- /usr/include/bits/types/timer_t.h /usr/include/bits/stdint-intn.h \
- /usr/include/endian.h /usr/include/bits/endian.h \
- /usr/include/bits/byteswap.h /usr/include/bits/uintn-identity.h \
- /usr/include/sys/select.h /usr/include/bits/select.h \
- /usr/include/bits/types/sigset_t.h /usr/include/bits/types/__sigset_t.h \
+ /usr/include/string.h /usr/include/bits/libc-header-start.h \
+ /usr/include/bits/types/locale_t.h /usr/include/bits/types/__locale_t.h \
+ /usr/include/strings.h /usr/include/sys/types.h \
+ /usr/include/bits/types/clock_t.h /usr/include/bits/types/clockid_t.h \
+ /usr/include/bits/types/time_t.h /usr/include/bits/types/timer_t.h \
+ /usr/include/bits/stdint-intn.h /usr/include/endian.h \
+ /usr/include/bits/endian.h /usr/include/bits/byteswap.h \
+ /usr/include/bits/uintn-identity.h /usr/include/sys/select.h \
+ /usr/include/bits/select.h /usr/include/bits/types/sigset_t.h \
+ /usr/include/bits/types/__sigset_t.h \
  /usr/include/bits/types/struct_timeval.h \
  /usr/include/bits/types/struct_timespec.h \
  /usr/include/bits/pthreadtypes.h /usr/include/bits/thread-shared-types.h \
  /usr/include/bits/pthreadtypes-arch.h /usr/include/ctype.h \
- /usr/include/bits/types/locale_t.h /usr/include/bits/types/__locale_t.h \
  /usr/include/signal.h /usr/include/bits/signum.h \
  /usr/include/bits/signum-generic.h \
  /usr/include/bits/types/sig_atomic_t.h \
@@ -30,7 +32,6 @@ exec.o: exec.c /usr/include/stdc-predef.h /usr/include/unistd.h \
  /usr/include/sys/ucontext.h /usr/include/bits/sigstack.h \
  /usr/include/bits/ss_flags.h /usr/include/bits/types/struct_sigstack.h \
  /usr/include/bits/sigthread.h /usr/include/stdio.h \
- /usr/include/bits/libc-header-start.h \
  /usr/lib/gcc/x86_64-redhat-linux/8/include/stdarg.h \
  /usr/include/bits/types/__fpos_t.h /usr/include/bits/types/__mbstate_t.h \
  /usr/include/bits/types/__fpos64_t.h /usr/include/bits/types/__FILE.h \
@@ -40,8 +41,7 @@ exec.o: exec.c /usr/include/stdc-predef.h /usr/include/unistd.h \
  /usr/include/bits/waitflags.h /usr/include/bits/waitstatus.h \
  /usr/include/bits/floatn.h /usr/include/bits/floatn-common.h \
  /usr/include/alloca.h /usr/include/bits/stdlib-bsearch.h \
- /usr/include/bits/stdlib-float.h /usr/include/string.h \
- /usr/include/strings.h constants.h invlib.h \
+ /usr/include/bits/stdlib-float.h constants.h invlib.h \
  /usr/lib/gcc/x86_64-redhat-linux/8/include/limits.h \
  /usr/lib/gcc/x86_64-redhat-linux/8/include/syslimits.h \
  /usr/include/limits.h /usr/include/bits/posix1_lim.h \
@@ -92,6 +92,16 @@ global.h:
 
 ../config.h:
 
+/usr/include/string.h:
+
+/usr/include/bits/libc-header-start.h:
+
+/usr/include/bits/types/locale_t.h:
+
+/usr/include/bits/types/__locale_t.h:
+
+/usr/include/strings.h:
+
 /usr/include/sys/types.h:
 
 /usr/include/bits/types/clock_t.h:
@@ -131,10 +141,6 @@ global.h:
 /usr/include/bits/pthreadtypes-arch.h:
 
 /usr/include/ctype.h:
-
-/usr/include/bits/types/locale_t.h:
-
-/usr/include/bits/types/__locale_t.h:
 
 /usr/include/signal.h:
 
@@ -176,8 +182,6 @@ global.h:
 
 /usr/include/stdio.h:
 
-/usr/include/bits/libc-header-start.h:
-
 /usr/lib/gcc/x86_64-redhat-linux/8/include/stdarg.h:
 
 /usr/include/bits/types/__fpos_t.h:
@@ -213,10 +217,6 @@ global.h:
 /usr/include/bits/stdlib-bsearch.h:
 
 /usr/include/bits/stdlib-float.h:
-
-/usr/include/string.h:
-
-/usr/include/strings.h:
 
 constants.h:
 

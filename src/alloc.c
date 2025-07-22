@@ -34,6 +34,7 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 #include "alloc.h"
 
 #include "global.h" /* for postfatal() */
@@ -42,20 +43,20 @@ static char const rcsid[] = "$Id: alloc.c,v 1.9 2014/11/20 21:12:54 broeker Exp 
 
 static	void	*alloctest(void *p);
 
-/* let autoconf find out if <stdlib.h> is available. This test will
- * succeed more reliably than the defined(__STDC__) one I replaced */
-#if STDC_HEADERS
-# include <stdlib.h>
-#else
-char	*calloc(), *malloc(), *realloc(), *strcpy();
-#endif
 
-/* allocate a string */
-
+/*
+ * version of strdup that only returns if successful.
+ */
 char *
 my_strdup(char *s)
 {
-	return(strcpy(mymalloc(strlen(s) + 1), s));
+	char	*dup;
+	size_t	allocsz = strlen(s) + sizeof ("");
+
+	dup = mymalloc(allocsz);
+	strlcpy(dup, s, allocsz);
+
+	return (dup);
 }
 
 
@@ -63,7 +64,7 @@ my_strdup(char *s)
 void *
 mymalloc(size_t size)
 {
-    return(alloctest(malloc(size)));
+    return (alloctest(malloc(size)));
 }
 
 
@@ -71,7 +72,7 @@ mymalloc(size_t size)
 void *
 mycalloc(size_t nelem, size_t size)
 {
-    return(alloctest(calloc(nelem, size)));
+    return (alloctest(calloc(nelem, size)));
 }
 
 
@@ -79,7 +80,7 @@ mycalloc(size_t nelem, size_t size)
 void *
 myrealloc(void *p, size_t size)
 {
-    return(alloctest(realloc(p, size)));
+    return (alloctest(realloc(p, size)));
 }
 
 
@@ -91,5 +92,6 @@ alloctest(void *p)
 	postfatal("\n%s: out of storage\n", argv0);
 	/* NOTREACHED */
     }
-    return(p);
+
+    return (p);
 }

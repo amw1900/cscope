@@ -42,6 +42,7 @@
 
 #include "config.h"
 #include <unistd.h>
+#include <string.h>
 #include <sys/types.h>
 #include <ctype.h>	/* isalpha, isdigit, etc. */
 #include <signal.h>	/* SIGINT and SIGQUIT */
@@ -54,28 +55,13 @@
 # include <floss.h>
 #endif
 
-/* Replace most of the #if BSD stuff. Taken straight from the autoconf
- * manual, with an extension for handling memset(). */
-#if STDC_HEADERS
-# include <string.h>	/* string functions */
-#else
-# ifndef HAVE_STRCHR
-#  define strchr index
-#  define strrchr rindex
-# endif
-char *strchr (), *strrchr ();
-# ifndef HAVE_MEMCPY
-#  define memcpy(d, s, n) bcopy ((s), (d), (n))
-#  define memmove(d, s, n) bcopy ((s), (d), (n))
-# endif
-# ifndef HAVE_MEMSET
-#  ifndef HAVE_MEMORY_H
-char	*memset();
-#  else 
-#   include <memory.h>	/* memset */
-#  endif /*V9*/
-# endif /* HAVE_MEMSET */
-#endif /* STDC_HEADERS */
+#if !HAVE_STRLCPY
+size_t	strlcpy(char *dst, const char *src, size_t dsize);
+#endif
+
+#if !HAVE_STRLCAT
+size_t	strlcat(char *dst, const char *src, size_t dsize);
+#endif
 
 #include "constants.h"	/* misc. constants */
 #include "invlib.h"	/* inverted index library */

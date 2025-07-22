@@ -70,6 +70,14 @@ static	unsigned long mincdirs = DIRINC; /* maximum number of #include directorie
 static	unsigned long msrcdirs; /* maximum number of source directories */
 static	unsigned long nvpsrcdirs; /* number of view path source directories */
 
+/*
+ * set by report_file_type() when it reports a non-regular/missing file; reset
+ * at the start of each inviewpath() lookup and consumed by makefilelist() so
+ * that errorsfound (and the interactive pause) is only raised when a message
+ * was actually printed, not for silently-skipped missing files.
+ */
+static	BOOL	file_type_reported;
+
 static	struct	listitem {	/* source file names without view pathing */
 	char	*text;
 	struct	listitem *next;
@@ -112,7 +120,11 @@ makevpsrcdirs(void)
 	srcdirs = mymalloc(msrcdirs * sizeof(*srcdirs));
 	*srcdirs = ".";	/* first source dir is always current dir */
 	for (i = 1; i < vpndirs; ++i) {
-		srcdirs[i] = vpdirs[i];
+		/*
+		 * Was srcdirs[i] = vpdirs[i] but that
+		 * leads to a duplicate free in freesrclist().
+		 */
+		srcdirs[i] = my_strdup(vpdirs[i]);
 	}
 	/* save the number of original source directories in the view path */
 	nvpsrcdirs = nsrcdirs;
@@ -139,7 +151,7 @@ sourcedir(char *dirlist)
 
 	/* if it isn't a full path name and there is a 
 	   multi-directory view path */
-	if (*dirlist != '/' && vpndirs > 1) {
+	if (*dir != '/' && vpndirs > 1) {
 			
 	    /* compute its path from higher view path source dirs */
 	    for (i = 1; i < nvpsrcdirs; ++i) {
@@ -207,7 +219,7 @@ includedir(char *dirlist)
 
 	/* if it isn't a full path name and there is a 
 	   multi-directory view path */
-	if (*dirlist != '/' && vpndirs > 1) {
+	if (*dir != '/' && vpndirs > 1) {
 			
 	    /* compute its path from higher view path source dirs */
 	    for (i = 1; i < nvpsrcdirs; ++i) {
@@ -286,7 +298,7 @@ makefilelist(void)
 	    if (infilelist(file) == NO) {
 		if ((s = inviewpath(file)) != NULL) {
 		    addsrcfile(s);
-		} else {
+		} else if (file_type_reported == YES) {
 		    errorsfound = YES;
 		}
 	    }
@@ -319,15 +331,20 @@ makefilelist(void)
 
     /* get the names in the file */
     while (fgets(line, 10*PATHLEN, names) != NULL) {
-	char *point_in_line = line + (strlen(line) - 1);
+	char *point_in_line;
 	size_t length_of_name = 0;
 	int unfinished_option = 0;
 	BOOL done = NO;
 
 	/* Kill away \n left at end of fgets()'d string: */
-	if (*point_in_line == '\n')
-	    *point_in_line = '\0';
-			
+	point_in_line = strchr(line, '\0');
+	if (point_in_line != line) {
+		--point_in_line;
+
+		if (*point_in_line == '\n')
+			*point_in_line = '\0';
+	}
+
 	/* Parse whitespace-terminated strings in line: */
 	point_in_line = line;
 	while (sscanf(point_in_line, "%" PATHLEN_STR "s", path) == 1) {
@@ -436,10 +453,11 @@ cscope: Syntax error in namelist file %s: unfinished -I or -p option\n",
 		if (! done) {
 		    if ((s = inviewpath(newpath)) != NULL) {
 			addsrcfile(s);
-		    } else {
+		    } else if (file_type_reported == YES) {
 			errorsfound = YES;
 		    }
 		}
+		free(newpath);
 	    } /* if(quoted name) */
 	    else {
 		/* ... so this is an ordinary file name, unquoted */
@@ -450,7 +468,7 @@ cscope: Syntax error in namelist file %s: unfinished -I or -p option\n",
 		if (!done) {
 		    if ((s = inviewpath(path)) != NULL) {
 			addsrcfile(s);
-		    } else {
+		    } else if (file_type_reported == YES) {
 			errorsfound = YES;
 		    }
 		}
@@ -639,13 +657,13 @@ infilelist(char *path)
 static void
 report_file_type(char *file, struct stat *stats)
 {
-	char buf[PATH_MAX];
-
 	if (S_ISREG(stats->st_mode))
 		return;
 
 	if (S_ISLNK(stats->st_mode)) {
 #if 0
+		char buf[PATH_MAX];
+
 		(void) memset(buf, 0, PATH_MAX);
 
 		if (readlink(file, buf, PATH_MAX) == -1) {
@@ -661,6 +679,7 @@ report_file_type(char *file, struct stat *stats)
 
 	if (S_ISDIR(stats->st_mode)) {
 		fprintf(stderr, "cscope: %s is a directory\n", file);
+		file_type_reported = YES;
 		return;
 	}
 
@@ -668,10 +687,12 @@ report_file_type(char *file, struct stat *stats)
 	    S_ISFIFO(stats->st_mode) ||  S_ISSOCK(stats->st_mode)) {
 		fprintf(stderr, "cscope: %s is a special (device) file\n",
 		    file);
+		file_type_reported = YES;
 		return;
 	}
 
 	fprintf(stderr, "cscope: cannot find file %s\n", file);
+	file_type_reported = YES;
 }
 
 /* check if a file is readable enough to be allowed in the
@@ -698,6 +719,9 @@ inviewpath(char *file)
 {
     static char	path[PATHLEN + 1];
     unsigned int i;
+
+    /* no diagnostic emitted for this lookup yet */
+    file_type_reported = NO;
 
     /* look for the file */
     if (accessible_file(file)) {

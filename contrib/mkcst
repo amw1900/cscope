@@ -1,0 +1,156 @@
+#!/bin/bash
+
+# Build cscope.files in the current directory and create cscope.out databases.
+# If pycscope is installed, create a pycscope database (cscope_py.out).
+# Optionally create tags files.
+
+# Create tags files in candidate directories.
+# Expects cscope.files as $1
+create_tag_files()
+{
+	DIRLIST=/tmp/$$.dirlist
+	TAGDIRS=/tmp/$$.tagdirs
+	CURDIR=`pwd`
+
+	rm -f $DIRLIST $TAGDIRS
+	touch $DIRLIST
+
+	for path in `cat $1` ; do
+		dirname $path >> $DIRLIST
+	done
+
+	uniq $DIRLIST > $TAGDIRS
+
+	for path in `cat $TAGDIRS` ; do
+		cd $CURDIR/$path > /dev/null 2>&1
+		rm -f tags
+		COUNT=`ls *.[Ccshlxy] *.cc *.cxx *.hxx *.cpp *.hpp *.[in]dl 2> /dev/null | wc -l`
+		if [[ $COUNT -ne 0 ]] ; then
+			# echo "$path $COUNT files"
+			touch tags
+			ctags * > /dev/null 2>&1
+		fi
+	done
+
+	cd $CURDIR
+	rm -f $DIRLIST $TAGDIRS
+}
+
+usage()
+{
+	echo "usage: $(basename "$0") [-i|--stdhdr] [-n|--nopycscope] [-t|--tags]" >&2
+	echo "  -i, --stdhdr      Add /usr/include and /usr/local/include to the database" >&2
+	echo "  -n, --nopycscope  Skip pycscope check, do not build a pycscope database" >&2
+	echo "  -t, --tags        Generate per-directory 'tags' files (via ctags)" >&2
+	exit 1
+}
+
+#
+# Parse command line options.
+#
+DO_STDHDR=0
+CHECK_FOR_PYCSCOPE=1
+HAVE_PYCSCOPE=0
+DO_TAGS=0
+
+while [[ $# -gt 0 ]] ; do
+	case "$1" in
+	-i|--stdhdr)		DO_STDHDR=1 ;;
+	-n|--nopycscope)	CHECK_FOR_PYCSCOPE=0 ;;
+	-t|--tags)		DO_TAGS=1 ;;
+	-h|--help)		usage ;;
+	*)			echo "$(basename "$0"): unknown option: $1" >&2
+				usage ;;
+	esac
+	shift
+done
+
+CSDIRS="."
+CSTMP=/tmp/$$.cscope
+PYTMP=/tmp/$$.pycscope
+
+#
+# Auto-detect pycscope (https://github.com/portante/pycscope).  When present,
+# Python sources are indexed separately by pycscope into cscope_py.out, rather
+# than being lexed (poorly) as C by cscope.
+#
+if [[ $CHECK_FOR_PYCSCOPE -eq 1 ]] ; then
+	if command -v pycscope > /dev/null 2>&1 ; then
+		HAVE_PYCSCOPE=1
+	else
+		HAVE_PYCSCOPE=0
+	fi
+fi
+
+date '+START: %H:%M:%S'
+
+#
+# List of additional paths to search
+#
+if [[ $DO_STDHDR -eq 1 ]] ; then
+	SEARCH_LIST="/usr/include /usr/local/include"
+else
+	SEARCH_LIST=""
+fi
+
+touch $CSTMP
+[[ $HAVE_PYCSCOPE -eq 1 ]] && touch $PYTMP
+
+for path in $SEARCH_LIST ; do
+	if [[ -d $path ]] ; then
+		echo "Searching $path"
+		find $path -name '*.[Ccshlxy]' -print >> $CSTMP
+	else
+		echo "$path: not found"
+	fi
+done
+
+# xref does: *.[Ccshlxy] Makefile* *.il* *.cc *.adb llib-*
+for i in $CSDIRS ; do
+    if [[ -d $i ]] ; then
+ 	find $i \( -name '*.[Ccshlxy]' \) -print >> $CSTMP
+ 	find $i \( -name '*.cc' -o -name '*.cxx' -o -name '*.cpp' -o -name '*.hpp' \) -print >> $CSTMP
+ 	find $i \( -name '*.xdr' -o -name '*.xml' -o -name '*.[in]dl' -o -name '*.il*' \) -print >> $CSTMP
+ 	find $i \( -name 'Makefil*' -o -name 'CMake*.txt' -o -name 'wscript*' \) -print >> $CSTMP
+ 	find $i \( -name 'config-h.in.cmake' \) -print >> $CSTMP
+
+ 	if [[ $HAVE_PYCSCOPE -eq 1 ]] ; then
+ 	    find $i \( -name '*.py' \) -print >> $PYTMP
+ 	else
+ 	    find $i \( -name '*.py' \) -print >> $CSTMP
+ 	fi
+    fi
+done
+
+sed '/BUILD/ d' $CSTMP > cscope.files
+sed -i '/huge.xml/d' cscope.files
+rm -f $CSTMP
+date '+CSCOPE: %H:%M:%S'
+cscope -buqp3 -f cscope.out
+
+if [[ $HAVE_PYCSCOPE -eq 1 ]] ; then
+	sed '/BUILD/ d' $PYTMP > cscope_py.files
+	rm -f $PYTMP
+
+	if [[ -s cscope_py.files ]] ; then
+		date '+PYCSCOPE: %H:%M:%S'
+		pycscope -f cscope_py.out -i cscope_py.files > /tmp/pycscope.log 2>&1
+	fi
+fi
+
+if [[ $DO_TAGS -eq 1 ]] ; then
+	date '+TAGS: %H:%M:%S'
+	create_tag_files cscope.files
+fi
+date '+COMPLETE: %H:%M:%S'
+
+#
+# If pycscope is not installed but Python sources were found, they
+# were indexed (poorly) as C.  Provide a hint to install pycscope.
+#
+if [[ $CHECK_FOR_PYCSCOPE -eq 1 && $HAVE_PYCSCOPE -eq 0 ]] && grep -q '\.py$' cscope.files ; then
+	echo "" >&2
+	echo "Note: pycscope not found; Python (*.py) files were indexed as C." >&2
+	echo "      For better Python support:  pip install --user git+https://github.com/portante/pycscope" >&2
+	echo "      Then re-run $(basename "$0")" >&2
+fi

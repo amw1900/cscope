@@ -94,6 +94,8 @@ struct	keystruct keyword[] = {
 	{"const",	' ',	NULL},
 	{"signed",	' ',	NULL},
 	{"volatile",	' ',	NULL},
+	{"inline",	' ',	NULL},
+	{"constexpr",	' ',	NULL},
 };
 #define KEYWORDS	(sizeof(keyword) / sizeof(keyword[0]))
 

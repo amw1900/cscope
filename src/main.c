@@ -155,7 +155,7 @@ char ** parse_options(int *argc, char **argv)
 	
 
 	while ((opt = getopt_long(argcc, argv,
-	       "hVbcCdeF:f:I:i:kLl0:1:2:3:4:5:6:7:8:9:P:p:qRs:TUuvX",
+	       "hVbcCdeF:f:I:i:kLl0:1:2:3:4:5:6:7:8:9:P:p:qRs:TUuvXo",
 	       lopts, &longind)) != -1) {
 		switch(opt) {
 
@@ -796,10 +796,13 @@ cscope: cannot read source file name from file %s\n",
 	    case '9':	/* samuel only */
 		field = *buf - '0';
 		strcpy(Pattern, buf + 1);
-		search();
-		printf("cscope: %d lines\n", totallines);
-		while ((c = getc(refsfound)) != EOF) {
-		    putchar(c);
+		if (search() == NO) {
+		    printf("Unable to search database\n");
+		} else {
+		    printf("cscope: %d lines\n", totallines);
+		    while ((c = getc(refsfound)) != EOF) {
+			putchar(c);
+		    }
 		}
 		break;
 
